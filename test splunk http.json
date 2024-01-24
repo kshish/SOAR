@@ -7,21 +7,14 @@
             "description": "",
             "edges": [
                 {
-                    "id": "port_0_to_port_2",
+                    "id": "port_0_to_port_3",
                     "sourceNode": "0",
                     "sourcePort": "0_out",
-                    "targetNode": "2",
-                    "targetPort": "2_in"
-                },
-                {
-                    "id": "port_2_to_port_3",
-                    "sourceNode": "2",
-                    "sourcePort": "2_out",
                     "targetNode": "3",
                     "targetPort": "3_in"
                 }
             ],
-            "hash": "ae12a7c78478abe59c3432fc73dd9e6c508b0973",
+            "hash": "4bc08c3c52a984ad2a8c8e07f8639bd56916b2cd",
             "nodes": {
                 "0": {
                     "data": {
@@ -54,27 +47,6 @@
                     "warnings": {},
                     "x": 1000,
                     "y": 1000
-                },
-                "2": {
-                    "data": {
-                        "advanced": {
-                            "join": []
-                        },
-                        "functionId": 1,
-                        "functionName": "format_1",
-                        "id": "2",
-                        "parameters": [
-                            ""
-                        ],
-                        "template": "{0}\n",
-                        "type": "format"
-                    },
-                    "errors": {},
-                    "id": "2",
-                    "type": "format",
-                    "warnings": {},
-                    "x": 980,
-                    "y": 584.5
                 },
                 "3": {
                     "data": {
@@ -129,7 +101,7 @@
         "schema": "5.0.11",
         "version": "6.2.0.355"
     },
-    "create_time": "2024-01-24T00:31:06.743912+00:00",
+    "create_time": "2024-01-24T00:31:44.846090+00:00",
     "draft_mode": false,
     "labels": [
         "*"
