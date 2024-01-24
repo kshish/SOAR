@@ -28,7 +28,7 @@ def get_data_1(action=None, success=None, container=None, results=None, handle=N
     parameters.append({
         "location": "/services/search/jobs",
         "headers": "",
-        "verify_certificate": True,
+        "verify_certificate": False,
     })
 
     ################################################################################
