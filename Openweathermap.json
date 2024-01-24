@@ -19,9 +19,23 @@
                     "sourcePort": "2_out",
                     "targetNode": "3",
                     "targetPort": "3_in"
+                },
+                {
+                    "id": "port_3_to_port_4",
+                    "sourceNode": "3",
+                    "sourcePort": "3_out",
+                    "targetNode": "4",
+                    "targetPort": "4_in"
+                },
+                {
+                    "id": "port_4_to_port_5",
+                    "sourceNode": "4",
+                    "sourcePort": "4_out",
+                    "targetNode": "5",
+                    "targetPort": "5_in"
                 }
             ],
-            "hash": "0f785d428ff71828c2ad85c5cb5a7c1518a6f167",
+            "hash": "4e69ccea41645a084e162921179d2ad409fb18c2",
             "nodes": {
                 "0": {
                     "data": {
@@ -52,8 +66,8 @@
                     "id": "1",
                     "type": "end",
                     "warnings": {},
-                    "x": 1000,
-                    "y": 1000
+                    "x": 1020,
+                    "y": 1360
                 },
                 "2": {
                     "data": {
@@ -66,7 +80,7 @@
                         "parameters": [
                             ""
                         ],
-                        "template": "?appid=e3c29ce408f5a2010d8b8332fc8adcc8&lon=41&lat=10\n",
+                        "template": "?appid=e3c29ce408f5a2010d8b8332fc8adcc8&lon=41&lat=10&units=imperial\n",
                         "type": "format"
                     },
                     "errors": {},
@@ -118,6 +132,148 @@
                     "warnings": {},
                     "x": 990,
                     "y": 804.5
+                },
+                "4": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "customDatapaths": {
+                            "get_data_1": {
+                                "action_result.data.*.location.test": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "label": "action_result.data.*.location.test",
+                                    "value": "get_data_1:action_result.data.*.location.test"
+                                },
+                                "action_result.data.*.parsed_response_body.dt": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "label": "action_result.data.*.parsed_response_body.dt",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.dt"
+                                },
+                                "action_result.data.*.parsed_response_body.main": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "label": "action_result.data.*.parsed_response_body.main",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.main"
+                                },
+                                "action_result.data.*.parsed_response_body.main.humidity": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "label": "action_result.data.*.parsed_response_body.main.humidity",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.main.humidity"
+                                },
+                                "action_result.data.*.parsed_response_body.main.pressure": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "label": "action_result.data.*.parsed_response_body.main.pressure",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.main.pressure"
+                                },
+                                "action_result.data.*.parsed_response_body.main.temp": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "label": "action_result.data.*.parsed_response_body.main.temp",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.main.temp"
+                                },
+                                "action_result.data.*.parsed_response_body.name": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "label": "action_result.data.*.parsed_response_body.name",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.name"
+                                }
+                            }
+                        },
+                        "functionId": 2,
+                        "functionName": "format_2",
+                        "id": "4",
+                        "parameters": [
+                            "get_data_1:action_result.data.*.parsed_response_body.name",
+                            "get_data_1:action_result.data.*.parsed_response_body.main.temp",
+                            "get_data_1:action_result.data.*.parsed_response_body.dt",
+                            "get_data_1:action_result.data.*.parsed_response_body.main.humidity",
+                            "get_data_1:action_result.data.*.parsed_response_body.main.pressure"
+                        ],
+                        "template": "Weather info for {0} at {2}\nTemperature: {1}\nHumidity: {3}\nPressure: {4}",
+                        "type": "format"
+                    },
+                    "errors": {},
+                    "id": "4",
+                    "type": "format",
+                    "warnings": {},
+                    "x": 980,
+                    "y": 1024.5
+                },
+                "5": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "functionId": 1,
+                        "functionName": "add_comment_1",
+                        "id": "5",
+                        "loop": {
+                            "enabled": false,
+                            "exitAfterUnit": "m",
+                            "exitAfterValue": 10,
+                            "exitConditionEnabled": false,
+                            "exitLoopAfter": 2,
+                            "pauseUnit": "m",
+                            "pauseValue": 2
+                        },
+                        "selectMore": false,
+                        "tab": "apis",
+                        "type": "utility",
+                        "utilities": {
+                            "comment": {
+                                "description": "",
+                                "fields": [
+                                    {
+                                        "description": "",
+                                        "label": "comment",
+                                        "name": "comment",
+                                        "placeholder": "Enter a comment",
+                                        "renderType": "datapath",
+                                        "required": true
+                                    },
+                                    {
+                                        "hidden": true,
+                                        "name": "container",
+                                        "required": false
+                                    },
+                                    {
+                                        "hidden": true,
+                                        "name": "author",
+                                        "required": false
+                                    },
+                                    {
+                                        "hidden": true,
+                                        "name": "trace",
+                                        "required": false
+                                    }
+                                ],
+                                "label": "add comment",
+                                "name": "comment"
+                            }
+                        },
+                        "utilityType": "api",
+                        "values": {
+                            "comment": {
+                                "_internal": [
+                                    "container",
+                                    "author",
+                                    "trace"
+                                ],
+                                "comment": "format_2:formatted_data"
+                            }
+                        }
+                    },
+                    "errors": {},
+                    "id": "5",
+                    "type": "utility",
+                    "warnings": {},
+                    "x": 980,
+                    "y": 1164.5
                 }
             },
             "notes": ""
@@ -129,7 +285,7 @@
         "schema": "5.0.11",
         "version": "6.2.0.355"
     },
-    "create_time": "2024-01-23T23:49:57.807752+00:00",
+    "create_time": "2024-01-24T00:00:29.961471+00:00",
     "draft_mode": false,
     "labels": [
         "*"
