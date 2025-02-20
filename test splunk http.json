@@ -14,6 +14,7 @@
                     "targetPort": "3_in"
                 }
             ],
+            "hash": "0723afec529b14d4eb91719850efc7b4f5e3d281",
             "nodes": {
                 "0": {
                     "data": {
@@ -29,7 +30,7 @@
                     "type": "start",
                     "warnings": {},
                     "x": 1000,
-                    "y": 419.9999999999998
+                    "y": 419.99999999999966
                 },
                 "1": {
                     "data": {
@@ -74,7 +75,7 @@
                         },
                         "parameters": {
                             "headers": "",
-                            "location": "/services/search/jobs",
+                            "location": "services/search/jobs",
                             "verify_certificate": false
                         },
                         "requiredParameters": [
@@ -97,12 +98,13 @@
         },
         "input_spec": null,
         "output_spec": null,
+        "playbook_trigger": "artifact_created",
         "playbook_type": "automation",
         "python_version": "3",
-        "schema": "5.0.11",
-        "version": "6.2.0.355"
+        "schema": "5.0.12",
+        "version": "6.2.2.123"
     },
-    "create_time": "2024-01-24T00:37:19.848732+00:00",
+    "create_time": "2025-02-20T20:02:11.531647+00:00",
     "draft_mode": false,
     "labels": [
         "*"
