@@ -14,7 +14,7 @@
                     "targetPort": "3_in"
                 }
             ],
-            "hash": "29f96fe8356f175dd9239162454f3188d8341cf0",
+            "hash": "f11f0f57e8b8bb87dfac9d5e4607bca06b109be4",
             "nodes": {
                 "0": {
                     "data": {
@@ -75,7 +75,7 @@
                         },
                         "parameters": {
                             "headers": "",
-                            "location": "search/jobs",
+                            "location": "authorization/capabilities",
                             "verify_certificate": false
                         },
                         "requiredParameters": [
@@ -104,7 +104,7 @@
         "schema": "5.0.12",
         "version": "6.2.2.123"
     },
-    "create_time": "2025-02-20T20:03:24.299856+00:00",
+    "create_time": "2025-02-20T20:06:55.378535+00:00",
     "draft_mode": false,
     "labels": [
         "*"
