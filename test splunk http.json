@@ -21,14 +21,21 @@
                     "targetPort": "4_in"
                 },
                 {
-                    "id": "port_4_to_port_5",
+                    "id": "port_4_to_port_6",
                     "sourceNode": "4",
                     "sourcePort": "4_out",
+                    "targetNode": "6",
+                    "targetPort": "6_in"
+                },
+                {
+                    "id": "port_6_to_port_5",
+                    "sourceNode": "6",
+                    "sourcePort": "6_out",
                     "targetNode": "5",
                     "targetPort": "5_in"
                 }
             ],
-            "hash": "2dcda56347b535cdaa7ff77ebac75750182e70bb",
+            "hash": "07c10f0a6e1718f3bee0caecd6ecb62ab7a1d546",
             "nodes": {
                 "0": {
                     "data": {
@@ -163,9 +170,10 @@
                         "functionId": 1,
                         "functionName": "prompt_1",
                         "id": "5",
-                        "message": "Here are the collections in Enterprise Security app:\n\n{0}",
+                        "message": "Here are the collections in Enterprise Security app:\n\n{0}\n\nkeys:\n\n{1}",
                         "parameters": [
-                            "format_1:formatted_data.*"
+                            "format_1:formatted_data.*",
+                            "format_2:formatted_data.*"
                         ],
                         "responseTime": 30,
                         "responses": [],
@@ -175,8 +183,91 @@
                     "id": "5",
                     "type": "prompt",
                     "warnings": {},
-                    "x": 1060,
-                    "y": 964.5
+                    "x": 1040,
+                    "y": 1060
+                },
+                "6": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "customDatapaths": {
+                            "get_data_1": {
+                                "action_result.data.*.parsed_response_body.feed": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "label": "action_result.data.*.parsed_response_body.feed",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.feed"
+                                },
+                                "action_result.data.*.parsed_response_body.feed.entry": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "isDatapathArray": true,
+                                    "label": "action_result.data.*.parsed_response_body.feed.entry",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.feed.entry"
+                                },
+                                "action_result.data.*.parsed_response_body.feed.entry.*.content": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "label": "action_result.data.*.parsed_response_body.feed.entry.*.content",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content"
+                                },
+                                "action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "label": "action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict"
+                                },
+                                "action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "isDatapathArray": true,
+                                    "label": "action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key"
+                                },
+                                "action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "label": "action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict"
+                                },
+                                "action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "isDatapathArray": true,
+                                    "label": "action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key"
+                                },
+                                "action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.#text": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "label": "action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.#text",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.#text"
+                                },
+                                "action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.@name": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "label": "action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.@name",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.@name"
+                                }
+                            }
+                        },
+                        "functionId": 2,
+                        "functionName": "format_2",
+                        "id": "6",
+                        "parameters": [
+                            "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.#text",
+                            "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.@name"
+                        ],
+                        "template": "%%\ntext: {0} name: {1}\n%%",
+                        "type": "format"
+                    },
+                    "errors": {},
+                    "id": "6",
+                    "type": "format",
+                    "warnings": {},
+                    "x": 980,
+                    "y": 920
                 }
             },
             "notes": ""
@@ -189,7 +280,7 @@
         "schema": "5.0.12",
         "version": "6.2.2.123"
     },
-    "create_time": "2025-02-25T21:04:39.612256+00:00",
+    "create_time": "2025-02-25T22:25:01.031146+00:00",
     "draft_mode": false,
     "labels": [
         "*"

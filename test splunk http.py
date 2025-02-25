@@ -69,7 +69,7 @@ def format_1(action=None, success=None, container=None, results=None, handle=Non
 
     phantom.format(container=container, template=template, parameters=parameters, name="format_1")
 
-    prompt_1(container=container)
+    format_2(container=container)
 
     return
 
@@ -82,14 +82,44 @@ def prompt_1(action=None, success=None, container=None, results=None, handle=Non
 
     user = None
     role = "Administrator"
-    message = """Here are the collections in Enterprise Security app:\n\n{0}"""
+    message = """Here are the collections in Enterprise Security app:\n\n{0}\n\nkeys:\n\n{1}"""
 
     # parameter list for template variable replacement
     parameters = [
-        "format_1:formatted_data.*"
+        "format_1:formatted_data.*",
+        "format_2:formatted_data.*"
     ]
 
     phantom.prompt2(container=container, user=user, role=role, message=message, respond_in_mins=30, name="prompt_1", parameters=parameters)
+
+    return
+
+
+@phantom.playbook_block()
+def format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("format_2() called")
+
+    template = """%%\ntext: {0} name: {1}\n%%"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.#text",
+        "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.@name"
+    ]
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_2")
+
+    prompt_1(container=container)
 
     return
 
