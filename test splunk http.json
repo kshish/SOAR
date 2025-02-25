@@ -28,7 +28,7 @@
                     "targetPort": "5_in"
                 }
             ],
-            "hash": "c616a408a94a6ad272543545d7baeb4ab08869a2",
+            "hash": "f11f0f57e8b8bb87dfac9d5e4607bca06b109be4",
             "nodes": {
                 "0": {
                     "data": {
@@ -121,18 +121,11 @@
                                     "label": "action_result.data.*.parsed_response_body.feed",
                                     "value": "get_data_1:action_result.data.*.parsed_response_body.feed"
                                 },
-                                "action_result.data.*.parsed_response_body.feed.*.entry": {
+                                "action_result.data.*.parsed_response_body.feed.*.title": {
                                     "contains": [],
                                     "isCustomDatapath": true,
-                                    "isDatapathArray": true,
-                                    "label": "action_result.data.*.parsed_response_body.feed.*.entry",
-                                    "value": "get_data_1:action_result.data.*.parsed_response_body.feed.*.entry"
-                                },
-                                "action_result.data.*.parsed_response_body.feed.*.entry.*.title": {
-                                    "contains": [],
-                                    "isCustomDatapath": true,
-                                    "label": "action_result.data.*.parsed_response_body.feed.*.entry.*.title",
-                                    "value": "get_data_1:action_result.data.*.parsed_response_body.feed.*.entry.*.title"
+                                    "label": "action_result.data.*.parsed_response_body.feed.*.title",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.feed.*.title"
                                 }
                             }
                         },
