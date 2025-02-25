@@ -27,7 +27,7 @@ def get_data_1(action=None, success=None, container=None, results=None, handle=N
 
     parameters.append({
         "headers": "",
-        "location": "storage/collections/data",
+        "location": "storage/collections/config",
         "verify_certificate": False,
     })
 
