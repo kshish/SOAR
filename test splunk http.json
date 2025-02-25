@@ -12,9 +12,23 @@
                     "sourcePort": "0_out",
                     "targetNode": "3",
                     "targetPort": "3_in"
+                },
+                {
+                    "id": "port_3_to_port_4",
+                    "sourceNode": "3",
+                    "sourcePort": "3_out",
+                    "targetNode": "4",
+                    "targetPort": "4_in"
+                },
+                {
+                    "id": "port_4_to_port_5",
+                    "sourceNode": "4",
+                    "sourcePort": "4_out",
+                    "targetNode": "5",
+                    "targetPort": "5_in"
                 }
             ],
-            "hash": "bf4bf73dcbb35d2ee86b54aea5bccaf51e75bc95",
+            "hash": "c616a408a94a6ad272543545d7baeb4ab08869a2",
             "nodes": {
                 "0": {
                     "data": {
@@ -45,8 +59,8 @@
                     "id": "1",
                     "type": "end",
                     "warnings": {},
-                    "x": 1000,
-                    "y": 1000
+                    "x": 980,
+                    "y": 1200
                 },
                 "3": {
                     "data": {
@@ -92,6 +106,78 @@
                     "warnings": {},
                     "x": 980,
                     "y": 620
+                },
+                "4": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "customDatapaths": {
+                            "get_data_1": {
+                                "action_result.data.*.parsed_response_body.feed": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "isDatapathArray": true,
+                                    "label": "action_result.data.*.parsed_response_body.feed",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.feed"
+                                },
+                                "action_result.data.*.parsed_response_body.feed.*.entry": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "isDatapathArray": true,
+                                    "label": "action_result.data.*.parsed_response_body.feed.*.entry",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.feed.*.entry"
+                                },
+                                "action_result.data.*.parsed_response_body.feed.*.entry.*.title": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "label": "action_result.data.*.parsed_response_body.feed.*.entry.*.title",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.feed.*.entry.*.title"
+                                }
+                            }
+                        },
+                        "functionId": 1,
+                        "functionName": "format_1",
+                        "id": "4",
+                        "parameters": [
+                            "get_data_1:action_result.data.*.parsed_response_body.feed.*.entry.*.title"
+                        ],
+                        "template": "%%\nCollection Name: {0}\n%%",
+                        "type": "format"
+                    },
+                    "errors": {},
+                    "id": "4",
+                    "type": "format",
+                    "warnings": {},
+                    "x": 980,
+                    "y": 804.5
+                },
+                "5": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "approver": {
+                            "type": "role",
+                            "value": "Administrator"
+                        },
+                        "functionId": 1,
+                        "functionName": "prompt_1",
+                        "id": "5",
+                        "message": "Here are the collections in Enterprise Security app:\n\n{0}",
+                        "parameters": [
+                            "format_1:formatted_data.*"
+                        ],
+                        "responseTime": 30,
+                        "responses": [],
+                        "type": "prompt"
+                    },
+                    "errors": {},
+                    "id": "5",
+                    "type": "prompt",
+                    "warnings": {},
+                    "x": 1060,
+                    "y": 964.5
                 }
             },
             "notes": ""
@@ -104,7 +190,7 @@
         "schema": "5.0.12",
         "version": "6.2.2.123"
     },
-    "create_time": "2025-02-25T20:23:28.515019+00:00",
+    "create_time": "2025-02-25T20:57:56.729598+00:00",
     "draft_mode": false,
     "labels": [
         "*"
