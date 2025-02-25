@@ -54,7 +54,7 @@
                     "targetPort": "4_in"
                 }
             ],
-            "hash": "96bc06c3edd7a493b830e68a1c4e817f8b18a0fd",
+            "hash": "ade7ccbbe68c7ff86cbefc5acae0665667e8b334",
             "nodes": {
                 "0": {
                     "data": {
@@ -357,7 +357,7 @@
                                     {
                                         "conditionIndex": 0,
                                         "op": "==",
-                                        "param": "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.s:dict.s:key.*.s:dict.s:key.*.@name",
+                                        "param": "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.@name",
                                         "value": "app"
                                     }
                                 ],
@@ -380,43 +380,49 @@
                                     "label": "action_result.data.*.parsed_response_body.feed.entry",
                                     "value": "get_data_1:action_result.data.*.parsed_response_body.feed.entry"
                                 },
-                                "action_result.data.*.parsed_response_body.feed.entry.*.s:dict": {
+                                "action_result.data.*.parsed_response_body.feed.entry.*.content": {
                                     "contains": [],
                                     "isCustomDatapath": true,
-                                    "label": "action_result.data.*.parsed_response_body.feed.entry.*.s:dict",
-                                    "value": "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.s:dict"
+                                    "label": "action_result.data.*.parsed_response_body.feed.entry.*.content",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content"
                                 },
-                                "action_result.data.*.parsed_response_body.feed.entry.*.s:dict.s:key": {
+                                "action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "label": "action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict"
+                                },
+                                "action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key": {
                                     "contains": [],
                                     "isCustomDatapath": true,
                                     "isDatapathArray": true,
-                                    "label": "action_result.data.*.parsed_response_body.feed.entry.*.s:dict.s:key",
-                                    "value": "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.s:dict.s:key"
+                                    "label": "action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key"
                                 },
-                                "action_result.data.*.parsed_response_body.feed.entry.*.s:dict.s:key.*.s:dict": {
+                                "action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict": {
                                     "contains": [],
                                     "isCustomDatapath": true,
-                                    "label": "action_result.data.*.parsed_response_body.feed.entry.*.s:dict.s:key.*.s:dict",
-                                    "value": "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.s:dict.s:key.*.s:dict"
+                                    "label": "action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict"
                                 },
-                                "action_result.data.*.parsed_response_body.feed.entry.*.s:dict.s:key.*.s:dict.s:key": {
+                                "action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key": {
                                     "contains": [],
                                     "isCustomDatapath": true,
                                     "isDatapathArray": true,
-                                    "label": "action_result.data.*.parsed_response_body.feed.entry.*.s:dict.s:key.*.s:dict.s:key",
-                                    "value": "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.s:dict.s:key.*.s:dict.s:key"
+                                    "label": "action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key"
                                 },
-                                "action_result.data.*.parsed_response_body.feed.entry.*.s:dict.s:key.*.s:dict.s:key.*.#text": {
+                                "action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.#text": {
                                     "contains": [],
                                     "isCustomDatapath": true,
-                                    "label": "action_result.data.*.parsed_response_body.feed.entry.*.s:dict.s:key.*.s:dict.s:key.*.#text",
-                                    "value": "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.s:dict.s:key.*.s:dict.s:key.*.#text"
+                                    "label": "action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.#text",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.#text"
                                 },
-                                "action_result.data.*.parsed_response_body.feed.entry.*.s:dict.s:key.*.s:dict.s:key.*.@name": {
+                                "action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.@name": {
                                     "contains": [],
                                     "isCustomDatapath": true,
-                                    "label": "action_result.data.*.parsed_response_body.feed.entry.*.s:dict.s:key.*.s:dict.s:key.*.@name",
-                                    "value": "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.s:dict.s:key.*.s:dict.s:key.*.@name"
+                                    "label": "action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.@name",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.@name"
                                 }
                             }
                         },
@@ -465,7 +471,7 @@
         "schema": "5.0.12",
         "version": "6.2.2.123"
     },
-    "create_time": "2025-02-25T22:50:59.998056+00:00",
+    "create_time": "2025-02-25T22:55:20.443771+00:00",
     "draft_mode": false,
     "labels": [
         "*"

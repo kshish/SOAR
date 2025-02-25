@@ -131,7 +131,7 @@ def filter_1(action=None, success=None, container=None, results=None, handle=Non
     matched_artifacts_1, matched_results_1 = phantom.condition(
         container=container,
         conditions=[
-            ["get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.s:dict.s:key.*.s:dict.s:key.*.@name", "==", "app"]
+            ["get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.@name", "==", "app"]
         ],
         name="filter_1:condition_1",
         delimiter=None)
