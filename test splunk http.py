@@ -41,7 +41,7 @@ def get_data_1(action=None, success=None, container=None, results=None, handle=N
     ## Custom Code End
     ################################################################################
 
-    phantom.act("get data", parameters=parameters, name="get_data_1", assets=["splunk"], callback=filter_1)
+    phantom.act("get data", parameters=parameters, name="get_data_1", assets=["splunk"], callback=f1)
 
     return
 
@@ -102,8 +102,8 @@ def format_2(action=None, success=None, container=None, results=None, handle=Non
 
     # parameter list for template variable replacement
     parameters = [
-        "filtered-data:filter_1:condition_1:get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.#text",
-        "filtered-data:filter_1:condition_1:get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.@name"
+        "filtered-data:f1:condition_1:get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.#text",
+        "filtered-data:f1:condition_1:get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.@name"
     ]
 
     ################################################################################
@@ -124,8 +124,8 @@ def format_2(action=None, success=None, container=None, results=None, handle=Non
 
 
 @phantom.playbook_block()
-def filter_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
-    phantom.debug("filter_1() called")
+def f1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("f1() called")
 
     # collect filtered artifact ids and results for 'if' condition 1
     matched_artifacts_1, matched_results_1 = phantom.condition(
@@ -133,7 +133,7 @@ def filter_1(action=None, success=None, container=None, results=None, handle=Non
         conditions=[
             ["get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.@name", "==", "app"]
         ],
-        name="filter_1:condition_1",
+        name="f1:condition_1",
         delimiter=None)
 
     # call connected blocks if filtered artifacts or results
