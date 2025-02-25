@@ -21,6 +21,25 @@
                     "targetPort": "4_in"
                 },
                 {
+                    "id": "port_3_to_port_7",
+                    "sourceNode": "3",
+                    "sourcePort": "3_out",
+                    "targetNode": "7",
+                    "targetPort": "7_in"
+                },
+                {
+                    "conditions": [
+                        {
+                            "index": 0
+                        }
+                    ],
+                    "id": "port_7_to_port_6",
+                    "sourceNode": "7",
+                    "sourcePort": "7_out",
+                    "targetNode": "6",
+                    "targetPort": "6_in"
+                },
+                {
                     "id": "port_4_to_port_6",
                     "sourceNode": "4",
                     "sourcePort": "4_out",
@@ -28,14 +47,21 @@
                     "targetPort": "6_in"
                 },
                 {
-                    "id": "port_6_to_port_5",
+                    "id": "port_6_to_port_8",
                     "sourceNode": "6",
                     "sourcePort": "6_out",
+                    "targetNode": "8",
+                    "targetPort": "8_in"
+                },
+                {
+                    "id": "port_8_to_port_5",
+                    "sourceNode": "8",
+                    "sourcePort": "8_out",
                     "targetNode": "5",
                     "targetPort": "5_in"
                 }
             ],
-            "hash": "07c10f0a6e1718f3bee0caecd6ecb62ab7a1d546",
+            "hash": "2fa2ecd15a4d6156ed2c563e72d3fd6b794e7e74",
             "nodes": {
                 "0": {
                     "data": {
@@ -67,7 +93,7 @@
                     "type": "end",
                     "warnings": {},
                     "x": 980,
-                    "y": 1200
+                    "y": 1500
                 },
                 "3": {
                     "data": {
@@ -170,10 +196,9 @@
                         "functionId": 1,
                         "functionName": "prompt_1",
                         "id": "5",
-                        "message": "Here are the collections in Enterprise Security app:\n\n{0}\n\nkeys:\n\n{1}",
+                        "message": "Here are the collections in Enterprise Security app:\n\n{0}\n",
                         "parameters": [
-                            "format_1:formatted_data.*",
-                            "format_2:formatted_data.*"
+                            "format_3:formatted_data.*"
                         ],
                         "responseTime": 30,
                         "responses": [],
@@ -183,8 +208,8 @@
                     "id": "5",
                     "type": "prompt",
                     "warnings": {},
-                    "x": 1040,
-                    "y": 1060
+                    "x": 1060,
+                    "y": 1400
                 },
                 "6": {
                     "data": {
@@ -192,6 +217,65 @@
                             "join": []
                         },
                         "customDatapaths": {
+                            "filter_1": {
+                                "condition_1:get_data_1:action_result.data.*.parsed_response_body.feed": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "label": "condition_1:get_data_1:action_result.data.*.parsed_response_body.feed",
+                                    "value": "filtered-data:filter_1:condition_1:get_data_1:action_result.data.*.parsed_response_body.feed"
+                                },
+                                "condition_1:get_data_1:action_result.data.*.parsed_response_body.feed.entry": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "isDatapathArray": true,
+                                    "label": "condition_1:get_data_1:action_result.data.*.parsed_response_body.feed.entry",
+                                    "value": "filtered-data:filter_1:condition_1:get_data_1:action_result.data.*.parsed_response_body.feed.entry"
+                                },
+                                "condition_1:get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "label": "condition_1:get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content",
+                                    "value": "filtered-data:filter_1:condition_1:get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content"
+                                },
+                                "condition_1:get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "label": "condition_1:get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict",
+                                    "value": "filtered-data:filter_1:condition_1:get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict"
+                                },
+                                "condition_1:get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "isDatapathArray": true,
+                                    "label": "condition_1:get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key",
+                                    "value": "filtered-data:filter_1:condition_1:get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key"
+                                },
+                                "condition_1:get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "label": "condition_1:get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict",
+                                    "value": "filtered-data:filter_1:condition_1:get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict"
+                                },
+                                "condition_1:get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "isDatapathArray": true,
+                                    "label": "condition_1:get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key",
+                                    "value": "filtered-data:filter_1:condition_1:get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key"
+                                },
+                                "condition_1:get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.#text": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "label": "condition_1:get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.#text",
+                                    "value": "filtered-data:filter_1:condition_1:get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.#text"
+                                },
+                                "condition_1:get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.@name": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "label": "condition_1:get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.@name",
+                                    "value": "filtered-data:filter_1:condition_1:get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.@name"
+                                }
+                            },
                             "get_data_1": {
                                 "action_result.data.*.parsed_response_body.feed": {
                                     "contains": [],
@@ -256,8 +340,8 @@
                         "functionName": "format_2",
                         "id": "6",
                         "parameters": [
-                            "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.#text",
-                            "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.@name"
+                            "filtered-data:filter_1:condition_1:get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.#text",
+                            "filtered-data:filter_1:condition_1:get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.@name"
                         ],
                         "template": "%%\ntext: {0} name: {1}\n%%",
                         "type": "format"
@@ -267,7 +351,115 @@
                     "type": "format",
                     "warnings": {},
                     "x": 980,
-                    "y": 920
+                    "y": 1220
+                },
+                "7": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "conditions": [
+                            {
+                                "comparisons": [
+                                    {
+                                        "conditionIndex": 0,
+                                        "op": "==",
+                                        "param": "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.s:dict.s:key.*.s:dict.s:key.*.@name",
+                                        "value": "app"
+                                    }
+                                ],
+                                "conditionIndex": 0,
+                                "logic": "and"
+                            }
+                        ],
+                        "customDatapaths": {
+                            "get_data_1": {
+                                "action_result.data.*.parsed_response_body.feed": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "label": "action_result.data.*.parsed_response_body.feed",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.feed"
+                                },
+                                "action_result.data.*.parsed_response_body.feed.entry": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "isDatapathArray": true,
+                                    "label": "action_result.data.*.parsed_response_body.feed.entry",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.feed.entry"
+                                },
+                                "action_result.data.*.parsed_response_body.feed.entry.*.s:dict": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "label": "action_result.data.*.parsed_response_body.feed.entry.*.s:dict",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.s:dict"
+                                },
+                                "action_result.data.*.parsed_response_body.feed.entry.*.s:dict.s:key": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "isDatapathArray": true,
+                                    "label": "action_result.data.*.parsed_response_body.feed.entry.*.s:dict.s:key",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.s:dict.s:key"
+                                },
+                                "action_result.data.*.parsed_response_body.feed.entry.*.s:dict.s:key.*.s:dict": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "label": "action_result.data.*.parsed_response_body.feed.entry.*.s:dict.s:key.*.s:dict",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.s:dict.s:key.*.s:dict"
+                                },
+                                "action_result.data.*.parsed_response_body.feed.entry.*.s:dict.s:key.*.s:dict.s:key": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "isDatapathArray": true,
+                                    "label": "action_result.data.*.parsed_response_body.feed.entry.*.s:dict.s:key.*.s:dict.s:key",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.s:dict.s:key.*.s:dict.s:key"
+                                },
+                                "action_result.data.*.parsed_response_body.feed.entry.*.s:dict.s:key.*.s:dict.s:key.*.#text": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "label": "action_result.data.*.parsed_response_body.feed.entry.*.s:dict.s:key.*.s:dict.s:key.*.#text",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.s:dict.s:key.*.s:dict.s:key.*.#text"
+                                },
+                                "action_result.data.*.parsed_response_body.feed.entry.*.s:dict.s:key.*.s:dict.s:key.*.@name": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "label": "action_result.data.*.parsed_response_body.feed.entry.*.s:dict.s:key.*.s:dict.s:key.*.@name",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.s:dict.s:key.*.s:dict.s:key.*.@name"
+                                }
+                            }
+                        },
+                        "functionId": 1,
+                        "functionName": "filter_1",
+                        "id": "7",
+                        "type": "filter"
+                    },
+                    "errors": {},
+                    "id": "7",
+                    "type": "filter",
+                    "warnings": {},
+                    "x": 1250,
+                    "y": 884.5
+                },
+                "8": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "functionId": 3,
+                        "functionName": "format_3",
+                        "id": "8",
+                        "parameters": [
+                            "format_1:formatted_data.*",
+                            "format_2:formatted_data.*"
+                        ],
+                        "template": "%%\n{0} {1}\n%%\n",
+                        "type": "format"
+                    },
+                    "errors": {},
+                    "id": "8",
+                    "type": "format",
+                    "warnings": {},
+                    "x": 990,
+                    "y": 1324.5
                 }
             },
             "notes": ""
@@ -280,7 +472,7 @@
         "schema": "5.0.12",
         "version": "6.2.2.123"
     },
-    "create_time": "2025-02-25T22:25:01.031146+00:00",
+    "create_time": "2025-02-25T22:48:32.040050+00:00",
     "draft_mode": false,
     "labels": [
         "*"

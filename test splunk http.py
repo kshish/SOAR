@@ -41,7 +41,19 @@ def get_data_1(action=None, success=None, container=None, results=None, handle=N
     ## Custom Code End
     ################################################################################
 
-    phantom.act("get data", parameters=parameters, name="get_data_1", assets=["splunk"], callback=format_1)
+    phantom.act("get data", parameters=parameters, name="get_data_1", assets=["splunk"], callback=get_data_1_callback)
+
+    return
+
+
+@phantom.playbook_block()
+def get_data_1_callback(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("get_data_1_callback() called")
+
+    
+    format_1(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=filtered_artifacts, filtered_results=filtered_results)
+    filter_1(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=filtered_artifacts, filtered_results=filtered_results)
+
 
     return
 
@@ -69,7 +81,7 @@ def format_1(action=None, success=None, container=None, results=None, handle=Non
 
     phantom.format(container=container, template=template, parameters=parameters, name="format_1")
 
-    format_2(container=container)
+    join_format_2(container=container)
 
     return
 
@@ -82,15 +94,25 @@ def prompt_1(action=None, success=None, container=None, results=None, handle=Non
 
     user = None
     role = "Administrator"
-    message = """Here are the collections in Enterprise Security app:\n\n{0}\n\nkeys:\n\n{1}"""
+    message = """Here are the collections in Enterprise Security app:\n\n{0}\n"""
 
     # parameter list for template variable replacement
     parameters = [
-        "format_1:formatted_data.*",
-        "format_2:formatted_data.*"
+        "format_3:formatted_data.*"
     ]
 
     phantom.prompt2(container=container, user=user, role=role, message=message, respond_in_mins=30, name="prompt_1", parameters=parameters)
+
+    return
+
+
+@phantom.playbook_block()
+def join_format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("join_format_2() called")
+
+    if phantom.completed(action_names=["get_data_1"]):
+        # call connected block "format_2"
+        format_2(container=container, handle=handle)
 
     return
 
@@ -103,8 +125,8 @@ def format_2(action=None, success=None, container=None, results=None, handle=Non
 
     # parameter list for template variable replacement
     parameters = [
-        "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.#text",
-        "get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.@name"
+        "filtered-data:filter_1:condition_1:get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.#text",
+        "filtered-data:filter_1:condition_1:get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.content.s:dict.s:key.*.s:dict.s:key.*.@name"
     ]
 
     ################################################################################
@@ -118,6 +140,55 @@ def format_2(action=None, success=None, container=None, results=None, handle=Non
     ################################################################################
 
     phantom.format(container=container, template=template, parameters=parameters, name="format_2")
+
+    format_3(container=container)
+
+    return
+
+
+@phantom.playbook_block()
+def filter_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("filter_1() called")
+
+    # collect filtered artifact ids and results for 'if' condition 1
+    matched_artifacts_1, matched_results_1 = phantom.condition(
+        container=container,
+        conditions=[
+            ["get_data_1:action_result.data.*.parsed_response_body.feed.entry.*.s:dict.s:key.*.s:dict.s:key.*.@name", "==", "app"]
+        ],
+        name="filter_1:condition_1",
+        delimiter=None)
+
+    # call connected blocks if filtered artifacts or results
+    if matched_artifacts_1 or matched_results_1:
+        join_format_2(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)
+
+    return
+
+
+@phantom.playbook_block()
+def format_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("format_3() called")
+
+    template = """%%\n{0} {1}\n%%\n"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "format_1:formatted_data.*",
+        "format_2:formatted_data.*"
+    ]
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_3")
 
     prompt_1(container=container)
 
