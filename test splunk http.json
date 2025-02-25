@@ -14,30 +14,11 @@
                     "targetPort": "3_in"
                 },
                 {
-                    "id": "port_3_to_port_4",
-                    "sourceNode": "3",
-                    "sourcePort": "3_out",
-                    "targetNode": "4",
-                    "targetPort": "4_in"
-                },
-                {
                     "id": "port_3_to_port_7",
                     "sourceNode": "3",
                     "sourcePort": "3_out",
                     "targetNode": "7",
                     "targetPort": "7_in"
-                },
-                {
-                    "conditions": [
-                        {
-                            "index": 0
-                        }
-                    ],
-                    "id": "port_7_to_port_6",
-                    "sourceNode": "7",
-                    "sourcePort": "7_out",
-                    "targetNode": "6",
-                    "targetPort": "6_in"
                 },
                 {
                     "id": "port_4_to_port_6",
@@ -59,9 +40,21 @@
                     "sourcePort": "8_out",
                     "targetNode": "5",
                     "targetPort": "5_in"
+                },
+                {
+                    "conditions": [
+                        {
+                            "index": 0
+                        }
+                    ],
+                    "id": "port_7_to_port_4",
+                    "sourceNode": "7",
+                    "sourcePort": "7_out",
+                    "targetNode": "4",
+                    "targetPort": "4_in"
                 }
             ],
-            "hash": "2fa2ecd15a4d6156ed2c563e72d3fd6b794e7e74",
+            "hash": "96bc06c3edd7a493b830e68a1c4e817f8b18a0fd",
             "nodes": {
                 "0": {
                     "data": {
@@ -182,7 +175,7 @@
                     "type": "format",
                     "warnings": {},
                     "x": 980,
-                    "y": 804.5
+                    "y": 980
                 },
                 "5": {
                     "data": {
@@ -436,8 +429,8 @@
                     "id": "7",
                     "type": "filter",
                     "warnings": {},
-                    "x": 1250,
-                    "y": 884.5
+                    "x": 1040,
+                    "y": 760
                 },
                 "8": {
                     "data": {
@@ -472,7 +465,7 @@
         "schema": "5.0.12",
         "version": "6.2.2.123"
     },
-    "create_time": "2025-02-25T22:48:32.040050+00:00",
+    "create_time": "2025-02-25T22:50:59.998056+00:00",
     "draft_mode": false,
     "labels": [
         "*"
