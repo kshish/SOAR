@@ -88,9 +88,7 @@ def format_collection_update_endpoint(action=None, success=None, container=None,
     template = """servicesNS/nobody/DA-ESS-ThreatIntelligence/storage/collections/data/http_intel\n"""
 
     # parameter list for template variable replacement
-    parameters = [
-        ""
-    ]
+    parameters = []
 
     ################################################################################
     ## Custom Code Start

@@ -28,7 +28,7 @@
                     "targetPort": "2_in"
                 }
             ],
-            "hash": "8740ab7b53be9fbaa8ca7cc670139b90705d6621",
+            "hash": "9252532ef39741ccfd075e4d9cbe22a770530c97",
             "nodes": {
                 "0": {
                     "data": {
@@ -143,9 +143,7 @@
                         "functionId": 2,
                         "functionName": "format_collection_update_endpoint",
                         "id": "4",
-                        "parameters": [
-                            ""
-                        ],
+                        "parameters": [],
                         "template": "servicesNS/nobody/DA-ESS-ThreatIntelligence/storage/collections/data/http_intel\n",
                         "type": "format"
                     },
@@ -193,7 +191,7 @@
         "schema": "5.0.12",
         "version": "6.2.2.123"
     },
-    "create_time": "2025-02-26T05:37:14.607142+00:00",
+    "create_time": "2025-02-26T05:38:34.171011+00:00",
     "draft_mode": false,
     "labels": [
         "*"
