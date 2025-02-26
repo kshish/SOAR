@@ -110,7 +110,7 @@ def format_threat_key_from_response(action=None, success=None, container=None, r
 
     # parameter list for template variable replacement
     parameters = [
-        "get_data_1:action_result.data.*.parsed_response_body.threat_key"
+        "get_data_1:action_result.data.*.parsed_response_body.*.threat_key"
     ]
 
     ################################################################################
