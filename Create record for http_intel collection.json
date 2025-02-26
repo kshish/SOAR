@@ -21,14 +21,21 @@
                     "targetPort": "4_in"
                 },
                 {
-                    "id": "port_4_to_port_2",
+                    "id": "port_4_to_port_5",
                     "sourceNode": "4",
                     "sourcePort": "4_out",
+                    "targetNode": "5",
+                    "targetPort": "5_in"
+                },
+                {
+                    "id": "port_5_to_port_2",
+                    "sourceNode": "5",
+                    "sourcePort": "5_out",
                     "targetNode": "2",
                     "targetPort": "2_in"
                 }
             ],
-            "hash": "d98264f2d09676942515eaf1b55d03deb3ef0d71",
+            "hash": "03662193da383d12113252ecd99dba60a33f8ea3",
             "nodes": {
                 "0": {
                     "data": {
@@ -60,7 +67,7 @@
                     "type": "end",
                     "warnings": {},
                     "x": 1000,
-                    "y": 1000
+                    "y": 1080
                 },
                 "2": {
                     "data": {
@@ -89,6 +96,7 @@
                         },
                         "parameters": {
                             "body": "format_json_body:formatted_data",
+                            "headers": "format_headers:formatted_data",
                             "location": "format_collection_update_endpoint:formatted_data"
                         },
                         "requiredParameters": [
@@ -104,7 +112,7 @@
                     "type": "action",
                     "warnings": {},
                     "x": 980,
-                    "y": 860
+                    "y": 960
                 },
                 "3": {
                     "data": {
@@ -153,6 +161,27 @@
                     "warnings": {},
                     "x": 980,
                     "y": 724.5
+                },
+                "5": {
+                    "data": {
+                        "advanced": {
+                            "customName": "format headers",
+                            "customNameId": 0,
+                            "join": []
+                        },
+                        "functionId": 3,
+                        "functionName": "format_headers",
+                        "id": "5",
+                        "parameters": [],
+                        "template": "Content-Type: application/json\n",
+                        "type": "format"
+                    },
+                    "errors": {},
+                    "id": "5",
+                    "type": "format",
+                    "warnings": {},
+                    "x": 980,
+                    "y": 844.5
                 }
             },
             "notes": ""
@@ -191,7 +220,7 @@
         "schema": "5.0.12",
         "version": "6.2.2.123"
     },
-    "create_time": "2025-02-26T05:42:56.014166+00:00",
+    "create_time": "2025-02-26T05:46:05.669082+00:00",
     "draft_mode": false,
     "labels": [
         "*"

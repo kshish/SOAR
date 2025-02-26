@@ -25,6 +25,7 @@ def post_data_1(action=None, success=None, container=None, results=None, handle=
 
     format_collection_update_endpoint = phantom.get_format_data(name="format_collection_update_endpoint")
     format_json_body = phantom.get_format_data(name="format_json_body")
+    format_headers = phantom.get_format_data(name="format_headers")
 
     parameters = []
 
@@ -32,6 +33,7 @@ def post_data_1(action=None, success=None, container=None, results=None, handle=
         parameters.append({
             "location": format_collection_update_endpoint,
             "body": format_json_body,
+            "headers": format_headers,
         })
 
     ################################################################################
@@ -101,6 +103,32 @@ def format_collection_update_endpoint(action=None, success=None, container=None,
     ################################################################################
 
     phantom.format(container=container, template=template, parameters=parameters, name="format_collection_update_endpoint")
+
+    format_headers(container=container)
+
+    return
+
+
+@phantom.playbook_block()
+def format_headers(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("format_headers() called")
+
+    template = """Content-Type: application/json\n"""
+
+    # parameter list for template variable replacement
+    parameters = []
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_headers")
 
     post_data_1(container=container)
 
