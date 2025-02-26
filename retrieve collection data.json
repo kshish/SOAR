@@ -28,7 +28,7 @@
                     "targetPort": "2_in"
                 }
             ],
-            "hash": "77d85f075a7b6af8d1601968f2975fc8e4b8df8e",
+            "hash": "4513dcf4f8d2fdd2ca21559ce77a444628545448",
             "nodes": {
                 "0": {
                     "data": {
@@ -148,7 +148,7 @@
                         "functionName": "format_query",
                         "id": "4",
                         "parameters": [],
-                        "template": "{{\"url\":\"https://answerstedhctbek.onion\"}}\n",
+                        "template": "{\"url\":\"https://answerstedhctbek.onion\"}\n",
                         "type": "format"
                     },
                     "errors": {},
@@ -175,7 +175,7 @@
         "schema": "5.0.12",
         "version": "6.2.2.123"
     },
-    "create_time": "2025-02-26T04:50:30.474463+00:00",
+    "create_time": "2025-02-26T04:53:53.250293+00:00",
     "draft_mode": false,
     "labels": [
         "*"
