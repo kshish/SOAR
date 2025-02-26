@@ -49,7 +49,7 @@
                     "targetPort": "6_in"
                 }
             ],
-            "hash": "0ee1335568e61cdba661c29de6ff3f49859bf7fd",
+            "hash": "74439371cd0df6c3640a285e475b084f498c226c",
             "nodes": {
                 "0": {
                     "data": {
@@ -172,7 +172,7 @@
                             "playbook_input:field_name",
                             "playbook_input:value"
                         ],
-                        "template": "{\"{{0}}\":\"{{1}}\"}\n",
+                        "template": "{{\"{0}\":\"{1}\"}}\n",
                         "type": "format"
                     },
                     "errors": {},
@@ -429,7 +429,7 @@
         "schema": "5.0.12",
         "version": "6.2.2.123"
     },
-    "create_time": "2025-02-26T05:28:18.041893+00:00",
+    "create_time": "2025-02-26T05:29:07.911889+00:00",
     "draft_mode": false,
     "labels": [
         "*"

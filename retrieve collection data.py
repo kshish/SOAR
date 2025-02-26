@@ -80,7 +80,7 @@ def get_data_1(action=None, success=None, container=None, results=None, handle=N
 def format_query(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
     phantom.debug("format_query() called")
 
-    template = """{\"{{0}}\":\"{{1}}\"}\n"""
+    template = """{{\"{0}\":\"{1}\"}}\n"""
 
     # parameter list for template variable replacement
     parameters = [
