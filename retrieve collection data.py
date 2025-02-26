@@ -12,20 +12,21 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
 
-    # call 'format_1' block
-    format_1(container=container)
+    # call 'format_query' block
+    format_query(container=container)
 
     return
 
 @phantom.playbook_block()
-def format_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
-    phantom.debug("format_1() called")
+def format_endpoint(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("format_endpoint() called")
 
-    template = """storage/collections/data/{0}\n"""
+    template = """storage/collections/data/{0}?query={1}\n"""
 
     # parameter list for template variable replacement
     parameters = [
-        "playbook_input:collection_name"
+        "playbook_input:collection_name",
+        "format_query:formatted_data"
     ]
 
     ################################################################################
@@ -38,7 +39,7 @@ def format_1(action=None, success=None, container=None, results=None, handle=Non
     ## Custom Code End
     ################################################################################
 
-    phantom.format(container=container, template=template, parameters=parameters, name="format_1")
+    phantom.format(container=container, template=template, parameters=parameters, name="format_endpoint")
 
     get_data_1(container=container)
 
@@ -51,13 +52,13 @@ def get_data_1(action=None, success=None, container=None, results=None, handle=N
 
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
-    format_1 = phantom.get_format_data(name="format_1")
+    format_endpoint = phantom.get_format_data(name="format_endpoint")
 
     parameters = []
 
-    if format_1 is not None:
+    if format_endpoint is not None:
         parameters.append({
-            "location": format_1,
+            "location": format_endpoint,
         })
 
     ################################################################################
@@ -71,6 +72,32 @@ def get_data_1(action=None, success=None, container=None, results=None, handle=N
     ################################################################################
 
     phantom.act("get data", parameters=parameters, name="get_data_1", assets=["splunk no app"])
+
+    return
+
+
+@phantom.playbook_block()
+def format_query(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("format_query() called")
+
+    template = """{{\"url\":\"https://answerstedhctbek.onion\"}}\n"""
+
+    # parameter list for template variable replacement
+    parameters = []
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_query")
+
+    format_endpoint(container=container)
 
     return
 

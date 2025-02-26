@@ -7,21 +7,28 @@
             "description": "",
             "edges": [
                 {
-                    "id": "port_0_to_port_2",
-                    "sourceNode": "0",
-                    "sourcePort": "0_out",
-                    "targetNode": "2",
-                    "targetPort": "2_in"
-                },
-                {
                     "id": "port_2_to_port_3",
                     "sourceNode": "2",
                     "sourcePort": "2_out",
                     "targetNode": "3",
                     "targetPort": "3_in"
+                },
+                {
+                    "id": "port_0_to_port_4",
+                    "sourceNode": "0",
+                    "sourcePort": "0_out",
+                    "targetNode": "4",
+                    "targetPort": "4_in"
+                },
+                {
+                    "id": "port_4_to_port_2",
+                    "sourceNode": "4",
+                    "sourcePort": "4_out",
+                    "targetNode": "2",
+                    "targetPort": "2_in"
                 }
             ],
-            "hash": "6a02ccc5fdac054cd94ee6bd2d07db04c185b98d",
+            "hash": "0a5c623fb978017ce1963dbef3ccf7cebfb4b30b",
             "nodes": {
                 "0": {
                     "data": {
@@ -41,7 +48,7 @@
                         ]
                     },
                     "x": 1000,
-                    "y": 419.9999999999998
+                    "y": 280
                 },
                 "1": {
                     "data": {
@@ -66,15 +73,18 @@
                 "2": {
                     "data": {
                         "advanced": {
+                            "customName": "format endpoint",
+                            "customNameId": 0,
                             "join": []
                         },
                         "functionId": 1,
-                        "functionName": "format_1",
+                        "functionName": "format_endpoint",
                         "id": "2",
                         "parameters": [
-                            "playbook_input:collection_name"
+                            "playbook_input:collection_name",
+                            "format_query:formatted_data"
                         ],
-                        "template": "storage/collections/data/{0}\n",
+                        "template": "storage/collections/data/{0}?query={1}\n",
                         "type": "format"
                     },
                     "errors": {},
@@ -82,7 +92,7 @@
                     "type": "format",
                     "warnings": {},
                     "x": 980,
-                    "y": 564.5
+                    "y": 560
                 },
                 "3": {
                     "data": {
@@ -110,7 +120,7 @@
                             "pauseValue": 2
                         },
                         "parameters": {
-                            "location": "format_1:formatted_data"
+                            "location": "format_endpoint:formatted_data"
                         },
                         "requiredParameters": [
                             {
@@ -126,6 +136,27 @@
                     "warnings": {},
                     "x": 980,
                     "y": 700
+                },
+                "4": {
+                    "data": {
+                        "advanced": {
+                            "customName": "format query",
+                            "customNameId": 0,
+                            "join": []
+                        },
+                        "functionId": 2,
+                        "functionName": "format_query",
+                        "id": "4",
+                        "parameters": [],
+                        "template": "{{\"url\":\"https://answerstedhctbek.onion\"}}\n",
+                        "type": "format"
+                    },
+                    "errors": {},
+                    "id": "4",
+                    "type": "format",
+                    "warnings": {},
+                    "x": 980,
+                    "y": 440
                 }
             },
             "notes": ""
@@ -144,7 +175,7 @@
         "schema": "5.0.12",
         "version": "6.2.2.123"
     },
-    "create_time": "2025-02-25T22:08:48.850370+00:00",
+    "create_time": "2025-02-26T04:36:25.221145+00:00",
     "draft_mode": false,
     "labels": [
         "*"
