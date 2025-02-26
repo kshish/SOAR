@@ -49,7 +49,7 @@
                     "targetPort": "6_in"
                 }
             ],
-            "hash": "0c4da3e59db57397258cdaa22f77a4c726b0c341",
+            "hash": "e082dad1cc8a62adb94034f71af647171b1a2da5",
             "nodes": {
                 "0": {
                     "data": {
@@ -168,8 +168,11 @@
                         "functionId": 2,
                         "functionName": "format_query",
                         "id": "4",
-                        "parameters": [],
-                        "template": "{\"url\":\"https://answerstedhctbek.onion\"}\n",
+                        "parameters": [
+                            "playbook_input:field_name",
+                            "playbook_input:value"
+                        ],
+                        "template": "{\"{0}\":\"{1}\"}\n",
                         "type": "format"
                     },
                     "errors": {},
@@ -398,6 +401,16 @@
                 "contains": [],
                 "description": "provide a collection name",
                 "name": "collection_name"
+            },
+            {
+                "contains": [],
+                "description": "provide field name in collection to search",
+                "name": "field name"
+            },
+            {
+                "contains": [],
+                "description": "provide value to search in field name",
+                "name": "value"
             }
         ],
         "output_spec": [
@@ -416,7 +429,7 @@
         "schema": "5.0.12",
         "version": "6.2.2.123"
     },
-    "create_time": "2025-02-26T05:07:31.326674+00:00",
+    "create_time": "2025-02-26T05:26:09.389076+00:00",
     "draft_mode": false,
     "labels": [
         "*"
