@@ -71,7 +71,7 @@ def get_data_1(action=None, success=None, container=None, results=None, handle=N
     ## Custom Code End
     ################################################################################
 
-    phantom.act("get data", parameters=parameters, name="get_data_1", assets=["splunk no app"], callback=format_3)
+    phantom.act("get data", parameters=parameters, name="get_data_1", assets=["splunk no app"], callback=format_threat_key_from_response)
 
     return
 
@@ -103,8 +103,8 @@ def format_query(action=None, success=None, container=None, results=None, handle
 
 
 @phantom.playbook_block()
-def format_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
-    phantom.debug("format_3() called")
+def format_threat_key_from_response(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("format_threat_key_from_response() called")
 
     template = """Threat key {0}\n"""
 
@@ -123,7 +123,45 @@ def format_3(action=None, success=None, container=None, results=None, handle=Non
     ## Custom Code End
     ################################################################################
 
-    phantom.format(container=container, template=template, parameters=parameters, name="format_3")
+    phantom.format(container=container, template=template, parameters=parameters, name="format_threat_key_from_response")
+
+    debug_1(container=container)
+
+    return
+
+
+@phantom.playbook_block()
+def debug_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("debug_1() called")
+
+    format_3 = phantom.get_format_data(name="format_3")
+
+    parameters = []
+
+    parameters.append({
+        "input_1": format_3,
+        "input_2": None,
+        "input_3": None,
+        "input_4": None,
+        "input_5": None,
+        "input_6": None,
+        "input_7": None,
+        "input_8": None,
+        "input_9": None,
+        "input_10": None,
+    })
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
+
+    phantom.custom_function(custom_function="community/debug", parameters=parameters, name="debug_1")
 
     return
 
