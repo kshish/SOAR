@@ -21,7 +21,7 @@ def on_start(container):
 def format_endpoint(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
     phantom.debug("format_endpoint() called")
 
-    template = """storage/collections/data/{0}?query=\"{1}\"\n"""
+    template = """storage/collections/data/{0}?query={1}\n"""
 
     # parameter list for template variable replacement
     parameters = [

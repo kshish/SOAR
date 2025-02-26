@@ -28,7 +28,7 @@
                     "targetPort": "2_in"
                 }
             ],
-            "hash": "4513dcf4f8d2fdd2ca21559ce77a444628545448",
+            "hash": "d02dc5eda572f469539d5fad33c830bd88ab1036",
             "nodes": {
                 "0": {
                     "data": {
@@ -84,7 +84,7 @@
                             "playbook_input:collection_name",
                             "format_query:formatted_data"
                         ],
-                        "template": "storage/collections/data/{0}?query=\"{1}\"\n",
+                        "template": "storage/collections/data/{0}?query={1}\n",
                         "type": "format"
                     },
                     "errors": {},
@@ -175,7 +175,7 @@
         "schema": "5.0.12",
         "version": "6.2.2.123"
     },
-    "create_time": "2025-02-26T04:53:53.250293+00:00",
+    "create_time": "2025-02-26T04:55:17.887205+00:00",
     "draft_mode": false,
     "labels": [
         "*"
