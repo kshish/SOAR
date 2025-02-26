@@ -113,7 +113,7 @@ def format_collection_update_endpoint(action=None, success=None, container=None,
 def format_headers(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
     phantom.debug("format_headers() called")
 
-    template = """{{\"Content-Type\": \"application/json\"}}\n"""
+    template = """{\"Content-Type\": \"application/json\"}\n"""
 
     # parameter list for template variable replacement
     parameters = []
