@@ -110,7 +110,7 @@ def format_threat_key_from_response(action=None, success=None, container=None, r
 
     # parameter list for template variable replacement
     parameters = [
-        "get_data_1:action_result.data.*.parsed_response_body.*.threat_key"
+        "get_data_1:action_result.data.*.parsed_response_body.threat_key"
     ]
 
     ################################################################################
@@ -134,12 +134,12 @@ def format_threat_key_from_response(action=None, success=None, container=None, r
 def debug_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
     phantom.debug("debug_1() called")
 
-    format_3 = phantom.get_format_data(name="format_3")
+    format_threat_key_from_response = phantom.get_format_data(name="format_threat_key_from_response")
 
     parameters = []
 
     parameters.append({
-        "input_1": format_3,
+        "input_1": format_threat_key_from_response,
         "input_2": None,
         "input_3": None,
         "input_4": None,

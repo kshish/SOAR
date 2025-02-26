@@ -49,7 +49,7 @@
                     "targetPort": "6_in"
                 }
             ],
-            "hash": "e7489d82ef9b964ec879e2a46b41e24fca4c2eb0",
+            "hash": "31ab2af36b91da8f6c64d60c5d0987943353e0ac",
             "nodes": {
                 "0": {
                     "data": {
@@ -200,7 +200,7 @@
                         "functionName": "format_threat_key_from_response",
                         "id": "5",
                         "parameters": [
-                            "get_data_1:action_result.data.*.parsed_response_body.*.threat_key"
+                            "get_data_1:action_result.data.*.parsed_response_body.threat_key"
                         ],
                         "template": "Threat key {0}\n",
                         "type": "format"
@@ -369,7 +369,7 @@
                         "values": {
                             "debug": {
                                 "input_1": [
-                                    "format_3:formatted_data"
+                                    "format_threat_key_from_response:formatted_data"
                                 ],
                                 "input_10": null,
                                 "input_2": null,
@@ -416,7 +416,7 @@
         "schema": "5.0.12",
         "version": "6.2.2.123"
     },
-    "create_time": "2025-02-26T05:03:06.235798+00:00",
+    "create_time": "2025-02-26T05:06:41.540359+00:00",
     "draft_mode": false,
     "labels": [
         "*"
