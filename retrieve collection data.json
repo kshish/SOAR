@@ -26,9 +26,23 @@
                     "sourcePort": "4_out",
                     "targetNode": "2",
                     "targetPort": "2_in"
+                },
+                {
+                    "id": "port_3_to_port_5",
+                    "sourceNode": "3",
+                    "sourcePort": "3_out",
+                    "targetNode": "5",
+                    "targetPort": "5_in"
+                },
+                {
+                    "id": "port_5_to_port_1",
+                    "sourceNode": "5",
+                    "sourcePort": "5_out",
+                    "targetNode": "1",
+                    "targetPort": "1_in"
                 }
             ],
-            "hash": "d02dc5eda572f469539d5fad33c830bd88ab1036",
+            "hash": "66896cd4d5d92bf36c21f595d7062d0479fabd80",
             "nodes": {
                 "0": {
                     "data": {
@@ -157,6 +171,37 @@
                     "warnings": {},
                     "x": 980,
                     "y": 440
+                },
+                "5": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "customDatapaths": {
+                            "get_data_1": {
+                                "action_result.data.*.parsed_response_body.threat_key": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "label": "action_result.data.*.parsed_response_body.threat_key",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.threat_key"
+                                }
+                            }
+                        },
+                        "functionId": 3,
+                        "functionName": "format_3",
+                        "id": "5",
+                        "parameters": [
+                            "get_data_1:action_result.data.*.parsed_response_body.threat_key"
+                        ],
+                        "template": "Threat key {0}\n",
+                        "type": "format"
+                    },
+                    "errors": {},
+                    "id": "5",
+                    "type": "format",
+                    "warnings": {},
+                    "x": 980,
+                    "y": 824.5
                 }
             },
             "notes": ""
@@ -168,14 +213,23 @@
                 "name": "collection_name"
             }
         ],
-        "output_spec": null,
+        "output_spec": [
+            {
+                "contains": [],
+                "datapaths": [],
+                "deduplicate": false,
+                "description": "",
+                "metadata": {},
+                "name": "threat_key"
+            }
+        ],
         "playbook_trigger": "artifact_created",
         "playbook_type": "data",
         "python_version": "3",
         "schema": "5.0.12",
         "version": "6.2.2.123"
     },
-    "create_time": "2025-02-26T04:55:17.887205+00:00",
+    "create_time": "2025-02-26T04:59:00.638996+00:00",
     "draft_mode": false,
     "labels": [
         "*"

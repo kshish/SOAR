@@ -71,7 +71,7 @@ def get_data_1(action=None, success=None, container=None, results=None, handle=N
     ## Custom Code End
     ################################################################################
 
-    phantom.act("get data", parameters=parameters, name="get_data_1", assets=["splunk no app"])
+    phantom.act("get data", parameters=parameters, name="get_data_1", assets=["splunk no app"], callback=format_3)
 
     return
 
@@ -103,8 +103,15 @@ def format_query(action=None, success=None, container=None, results=None, handle
 
 
 @phantom.playbook_block()
-def on_finish(container, summary):
-    phantom.debug("on_finish() called")
+def format_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("format_3() called")
+
+    template = """Threat key {0}\n"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "get_data_1:action_result.data.*.parsed_response_body.threat_key"
+    ]
 
     ################################################################################
     ## Custom Code Start
@@ -115,5 +122,30 @@ def on_finish(container, summary):
     ################################################################################
     ## Custom Code End
     ################################################################################
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_3")
+
+    return
+
+
+@phantom.playbook_block()
+def on_finish(container, summary):
+    phantom.debug("on_finish() called")
+
+    output = {
+        "threat_key": [],
+    }
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
+
+    phantom.save_playbook_output_data(output=output)
 
     return
