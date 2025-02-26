@@ -35,7 +35,7 @@
                     "targetPort": "2_in"
                 }
             ],
-            "hash": "03662193da383d12113252ecd99dba60a33f8ea3",
+            "hash": "23073be765cdb5df9dea33261a2099081c02ac4d",
             "nodes": {
                 "0": {
                     "data": {
@@ -173,7 +173,7 @@
                         "functionName": "format_headers",
                         "id": "5",
                         "parameters": [],
-                        "template": "Content-Type: application/json\n",
+                        "template": "{{\"Content-Type\": \"application/json\"}}\n",
                         "type": "format"
                     },
                     "errors": {},
@@ -220,7 +220,7 @@
         "schema": "5.0.12",
         "version": "6.2.2.123"
     },
-    "create_time": "2025-02-26T05:46:05.669082+00:00",
+    "create_time": "2025-02-26T05:47:20.938835+00:00",
     "draft_mode": false,
     "labels": [
         "*"
