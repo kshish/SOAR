@@ -71,7 +71,7 @@ def get_data_1(action=None, success=None, container=None, results=None, handle=N
     ## Custom Code End
     ################################################################################
 
-    phantom.act("get data", parameters=parameters, name="get_data_1", assets=["splunk_da-ess-threatintelligence"], callback=format_threat_key_from_response)
+    phantom.act("get data", parameters=parameters, name="get_data_1", assets=["splunk es"], callback=format_threat_key_from_response)
 
     return
 

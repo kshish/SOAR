@@ -49,7 +49,7 @@
                     "targetPort": "6_in"
                 }
             ],
-            "hash": "5ba71f1d683f825eb0b543cbf11b0e765768e0a9",
+            "hash": "bb89bc1b95673d45eeadca5a778273c053f1ad13",
             "nodes": {
                 "0": {
                     "data": {
@@ -69,7 +69,7 @@
                         ]
                     },
                     "x": 1000,
-                    "y": 279.9999999999998
+                    "y": 279.99999999999966
                 },
                 "1": {
                     "data": {
@@ -124,7 +124,7 @@
                         },
                         "connector": "HTTP",
                         "connectorConfigs": [
-                            "splunk_da-ess-threatintelligence"
+                            "splunk es"
                         ],
                         "connectorId": "290b7499-0374-4930-9cdc-5e9b05d65827",
                         "connectorVersion": "v1",
@@ -425,11 +425,11 @@
         ],
         "playbook_trigger": "artifact_created",
         "playbook_type": "data",
-        "python_version": "3",
-        "schema": "5.0.12",
-        "version": "6.2.2.123"
+        "python_version": "3.9",
+        "schema": "5.0.17",
+        "version": "6.4.1.338"
     },
-    "create_time": "2025-03-21T03:48:01.274108+00:00",
+    "create_time": "2025-05-21T05:26:57.944590+00:00",
     "draft_mode": false,
     "labels": [
         "*"
