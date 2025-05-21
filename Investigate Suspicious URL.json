@@ -115,7 +115,7 @@
                     "targetPort": "14_in"
                 }
             ],
-            "hash": "7af3e4e1cdca24586b4cf885a4d77e5ec30e9b36",
+            "hash": "8b78d387647237b77fc496f07845b825f3f81f3d",
             "nodes": {
                 "0": {
                     "data": {
@@ -693,7 +693,7 @@
                         "parameters": [
                             "playbook_retrieve_collection_data_1:playbook_output:threat_key"
                         ],
-                        "template": "Caution!!!\n\nThreat key match: {0}\n",
+                        "template": "Caution!!!\n\nThreat match: {0}\n",
                         "type": "format"
                     },
                     "errors": {},
@@ -873,7 +873,7 @@
         "schema": "5.0.17",
         "version": "6.4.1.338"
     },
-    "create_time": "2025-05-21T05:30:10.461761+00:00",
+    "create_time": "2025-05-21T05:35:48.788079+00:00",
     "draft_mode": false,
     "labels": [
         "suspicious url"

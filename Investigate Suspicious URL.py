@@ -112,7 +112,7 @@ def container_update_1(action=None, success=None, container=None, results=None, 
 def format_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
     phantom.debug("format_1() called")
 
-    template = """Caution!!!\n\nThreat key match: {0}\n"""
+    template = """Caution!!!\n\nThreat match: {0}\n"""
 
     # parameter list for template variable replacement
     parameters = [
