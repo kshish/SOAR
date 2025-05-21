@@ -23,17 +23,17 @@ def post_data_1(action=None, success=None, container=None, results=None, handle=
 
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
-    format_collection_update_endpoint = phantom.get_format_data(name="format_collection_update_endpoint")
     format_json_body = phantom.get_format_data(name="format_json_body")
     format_headers = phantom.get_format_data(name="format_headers")
+    format_collection_update_endpoint = phantom.get_format_data(name="format_collection_update_endpoint")
 
     parameters = []
 
     if format_collection_update_endpoint is not None:
         parameters.append({
-            "location": format_collection_update_endpoint,
             "body": format_json_body,
             "headers": format_headers,
+            "location": format_collection_update_endpoint,
         })
 
     ################################################################################
@@ -46,7 +46,7 @@ def post_data_1(action=None, success=None, container=None, results=None, handle=
     ## Custom Code End
     ################################################################################
 
-    phantom.act("post data", parameters=parameters, name="post_data_1", assets=["splunk da ess threat intel"])
+    phantom.act("post data", parameters=parameters, name="post_data_1", assets=["splunk es"])
 
     return
 
