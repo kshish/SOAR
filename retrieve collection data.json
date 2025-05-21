@@ -49,7 +49,7 @@
                     "targetPort": "6_in"
                 }
             ],
-            "hash": "5ba71f1d683f825eb0b543cbf11b0e765768e0a9",
+            "hash": "d317e21b81148c615350789496f067061870e647",
             "nodes": {
                 "0": {
                     "data": {
@@ -75,6 +75,16 @@
                     "data": {
                         "advanced": {
                             "join": []
+                        },
+                        "customDatapaths": {
+                            "get_data_1": {
+                                "action_result.data.*.parsed_response_body.url": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "label": "action_result.data.*.parsed_response_body.url",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.url"
+                                }
+                            }
                         },
                         "functionName": "on_finish",
                         "id": "1",
@@ -416,7 +426,9 @@
         "output_spec": [
             {
                 "contains": [],
-                "datapaths": [],
+                "datapaths": [
+                    "get_data_1:action_result.data.*.parsed_response_body.url"
+                ],
                 "deduplicate": false,
                 "description": "",
                 "metadata": {},
@@ -429,7 +441,7 @@
         "schema": "5.0.17",
         "version": "6.4.1.338"
     },
-    "create_time": "2025-05-21T05:26:57.944590+00:00",
+    "create_time": "2025-05-21T05:37:07.543284+00:00",
     "draft_mode": false,
     "labels": [
         "*"
