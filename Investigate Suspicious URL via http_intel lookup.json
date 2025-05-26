@@ -89,7 +89,7 @@
                     "targetPort": "12_in"
                 }
             ],
-            "hash": "dd07bb8784c7e83fe88e67a2c588f1dd12680576",
+            "hash": "175551e1d34c1f0066fef59ffd9843741ba4f9ae",
             "nodes": {
                 "0": {
                     "data": {
@@ -635,7 +635,7 @@
                         "parameters": [
                             "playbook_lookup_url_in_es_http_intel_collection_1:playbook_input:url"
                         ],
-                        "template": "URL not found in http_intel threat list.\n\nURL: ",
+                        "template": "URL not found in http_intel threat list.\n\nURL: {0}",
                         "type": "format"
                     },
                     "errors": {},
@@ -727,7 +727,7 @@
         "schema": "5.0.19",
         "version": "6.4.1.353"
     },
-    "create_time": "2025-05-26T22:45:27.475217+00:00",
+    "create_time": "2025-05-26T22:54:58.203988+00:00",
     "draft_mode": false,
     "labels": [
         "*"

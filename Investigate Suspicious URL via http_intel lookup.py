@@ -178,7 +178,7 @@ def add_comment_3(action=None, success=None, container=None, results=None, handl
 def format_url_not_found_msg(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
     phantom.debug("format_url_not_found_msg() called")
 
-    template = """URL not found in http_intel threat list.\n\nURL: """
+    template = """URL not found in http_intel threat list.\n\nURL: {0}"""
 
     # parameter list for template variable replacement
     parameters = [
