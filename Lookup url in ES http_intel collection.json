@@ -35,7 +35,7 @@
                     "targetPort": "1_in"
                 }
             ],
-            "hash": "ae3f526be0c10e2db93479162b8c984054d09756",
+            "hash": "48c0c633c82ce66f8291d32f5b6e19b9179a3059",
             "nodes": {
                 "0": {
                     "data": {
@@ -60,11 +60,18 @@
                         },
                         "customDatapaths": {
                             "get_data_1": {
-                                "action_result.data.*.parsed_response_body.threat_key": {
+                                "action_result.data.*.parsed_response_body.record": {
                                     "contains": [],
                                     "isCustomDatapath": true,
-                                    "label": "action_result.data.*.parsed_response_body.threat_key",
-                                    "value": "get_data_1:action_result.data.*.parsed_response_body.threat_key"
+                                    "isDatapathArray": true,
+                                    "label": "action_result.data.*.parsed_response_body.record",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.record"
+                                },
+                                "action_result.data.*.parsed_response_body.record.*.threat_key": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "label": "action_result.data.*.parsed_response_body.record.*.threat_key",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.record.*.threat_key"
                                 }
                             }
                         },
@@ -198,7 +205,8 @@
             {
                 "contains": [],
                 "datapaths": [
-                    "get_data_1:action_result.data.*.parsed_response_body.threat_key"
+                    "get_data_1:action_result.data.*.parsed_response_body.threat_key",
+                    "get_data_1:action_result.data.*.parsed_response_body.record.*.threat_key"
                 ],
                 "deduplicate": false,
                 "description": "This is the threat key looked up from http_intel",
@@ -212,7 +220,7 @@
         "schema": "5.0.19",
         "version": "6.4.1.353"
     },
-    "create_time": "2025-05-26T21:32:36.166073+00:00",
+    "create_time": "2025-05-26T22:00:05.250004+00:00",
     "draft_mode": false,
     "labels": [
         "*"
