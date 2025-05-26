@@ -42,7 +42,7 @@
                     "targetPort": "6_in"
                 }
             ],
-            "hash": "57136f37dcbdb023c0bb69584c55d6269401935d",
+            "hash": "17cc7bfe348f643e847a4661fd443115050fe661",
             "nodes": {
                 "0": {
                     "data": {
@@ -386,7 +386,6 @@
             {
                 "contains": [],
                 "datapaths": [
-                    "get_data_1:action_result.data.*.parsed_response_body.threat_key",
                     "get_data_1:action_result.data.*.parsed_response_body.record.*.threat_key"
                 ],
                 "deduplicate": false,
@@ -401,7 +400,7 @@
         "schema": "5.0.19",
         "version": "6.4.1.353"
     },
-    "create_time": "2025-05-26T22:06:24.466573+00:00",
+    "create_time": "2025-05-26T22:08:59.410766+00:00",
     "draft_mode": false,
     "labels": [
         "*"
