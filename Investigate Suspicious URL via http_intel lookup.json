@@ -87,8 +87,29 @@
                     "sourcePort": "11_out",
                     "targetNode": "12",
                     "targetPort": "12_in"
+                },
+                {
+                    "conditions": [
+                        {
+                            "conditionKey": "condition_key_0",
+                            "index": 0
+                        }
+                    ],
+                    "id": "port_12_to_port_14",
+                    "sourceNode": "12",
+                    "sourcePort": "12_out",
+                    "targetNode": "14",
+                    "targetPort": "14_in"
+                },
+                {
+                    "id": "port_14_to_port_13",
+                    "sourceNode": "14",
+                    "sourcePort": "14_out",
+                    "targetNode": "13",
+                    "targetPort": "13_in"
                 }
             ],
+            "hash": "2fad4e5b72b65f0c580fe4e435683fc8e65d1f97",
             "nodes": {
                 "0": {
                     "data": {
@@ -257,6 +278,90 @@
                     "warnings": {},
                     "x": 860,
                     "y": 1340
+                },
+                "13": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "functionId": 1,
+                        "functionName": "playbook_Create_record_for_http_intel_collection_1",
+                        "id": "13",
+                        "inputs": {
+                            "_key": {
+                                "datapaths": [],
+                                "deduplicate": false
+                            },
+                            "_user": {
+                                "datapaths": [
+                                    "nobody"
+                                ],
+                                "deduplicate": false
+                            },
+                            "threat key": {
+                                "datapaths": [
+                                    "format_threat_key_value:formatted_data"
+                                ],
+                                "deduplicate": false
+                            },
+                            "time": {
+                                "datapaths": [
+                                    "ask_to_add_to_threat_list:action_result.summary.sent_at"
+                                ],
+                                "deduplicate": false
+                            },
+                            "url": {
+                                "datapaths": [
+                                    "playbook_lookup_url_in_es_http_intel_collection_1:playbook_input:url"
+                                ],
+                                "deduplicate": false
+                            }
+                        },
+                        "loop": {
+                            "enabled": false,
+                            "exitAfterUnit": "m",
+                            "exitAfterValue": 10,
+                            "exitConditionEnabled": false,
+                            "exitLoopAfter": 2,
+                            "pauseUnit": "m",
+                            "pauseValue": 2
+                        },
+                        "playbookName": "Create record for http_intel collection",
+                        "playbookRepo": 3,
+                        "playbookRepoName": "conf25",
+                        "playbookType": "data",
+                        "synchronous": false,
+                        "type": "playbook"
+                    },
+                    "errors": {},
+                    "id": "13",
+                    "type": "playbook",
+                    "warnings": {},
+                    "x": 1080,
+                    "y": 1620
+                },
+                "14": {
+                    "data": {
+                        "advanced": {
+                            "customName": "Format threat key value",
+                            "customNameId": 0,
+                            "join": []
+                        },
+                        "functionId": 3,
+                        "functionName": "format_threat_key_value",
+                        "id": "14",
+                        "parameters": [
+                            "ask_to_add_to_threat_list:action_result.summary.user"
+                        ],
+                        "template": "local intel added by {0}\n",
+                        "type": "format"
+                    },
+                    "errors": {},
+                    "id": "14",
+                    "type": "format",
+                    "warnings": {},
+                    "x": 1070,
+                    "y": 1484.5
                 },
                 "2": {
                     "data": {
@@ -726,7 +831,7 @@
         "schema": "5.0.19",
         "version": "6.4.1.353"
     },
-    "create_time": "2025-05-26T22:54:58.203988+00:00",
+    "create_time": "2025-05-26T23:07:04.030899+00:00",
     "draft_mode": false,
     "labels": [
         "*"
