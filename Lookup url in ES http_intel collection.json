@@ -42,7 +42,7 @@
                     "targetPort": "6_in"
                 }
             ],
-            "hash": "043cb9bcc0cc583f39dfc03c2bbcec596bb06efb",
+            "hash": "57136f37dcbdb023c0bb69584c55d6269401935d",
             "nodes": {
                 "0": {
                     "data": {
@@ -108,17 +108,13 @@
                         "parameters": [
                             "format_query:formatted_data"
                         ],
-                        "template": "storage/collections/data/http_intel?query=\n",
+                        "template": "storage/collections/data/http_intel?query=\n{0}",
                         "type": "format"
                     },
                     "errors": {},
                     "id": "2",
                     "type": "format",
-                    "warnings": {
-                        "config": [
-                            "Reconfigure invalid datapath."
-                        ]
-                    },
+                    "warnings": {},
                     "x": 980,
                     "y": 640
                 },
@@ -405,7 +401,7 @@
         "schema": "5.0.19",
         "version": "6.4.1.353"
     },
-    "create_time": "2025-05-26T22:05:31.461843+00:00",
+    "create_time": "2025-05-26T22:06:24.466573+00:00",
     "draft_mode": false,
     "labels": [
         "*"
