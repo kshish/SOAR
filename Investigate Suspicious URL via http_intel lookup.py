@@ -276,7 +276,19 @@ def ask_to_add_to_threat_list(action=None, success=None, container=None, results
         }
     ]
 
-    phantom.prompt2(container=container, user=user, role=role, message=message, respond_in_mins=5, name="ask_to_add_to_threat_list", parameters=parameters, response_types=response_types, callback=decision_2)
+    phantom.prompt2(container=container, user=user, role=role, message=message, respond_in_mins=5, name="ask_to_add_to_threat_list", parameters=parameters, response_types=response_types, callback=ask_to_add_to_threat_list_callback)
+
+    return
+
+
+@phantom.playbook_block()
+def ask_to_add_to_threat_list_callback(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("ask_to_add_to_threat_list_callback() called")
+
+    
+    decision_2(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=filtered_artifacts, filtered_results=filtered_results)
+    from_prompt(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=filtered_artifacts, filtered_results=filtered_results)
+
 
     return
 
@@ -322,7 +334,7 @@ def playbook_create_record_for_http_intel_collection_1(action=None, success=None
         "threat_key": format_threat_key_value,
         "time": ask_to_add_to_threat_list_summary_sent_at,
         "_user": format_record_user_field,
-        "_key": [],
+        "_key": ["test"],
     }
 
     ################################################################################
@@ -391,6 +403,46 @@ def format_record_user_field(action=None, success=None, container=None, results=
     phantom.format(container=container, template=template, parameters=parameters, name="format_record_user_field")
 
     playbook_create_record_for_http_intel_collection_1(container=container)
+
+    return
+
+
+@phantom.playbook_block()
+def from_prompt(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("from_prompt() called")
+
+    ask_to_add_to_threat_list_result_data = phantom.collect2(container=container, datapath=["ask_to_add_to_threat_list:action_result.summary.user","ask_to_add_to_threat_list:action_result.summary.answered_at","ask_to_add_to_threat_list:action_result.summary.sent_at","ask_to_add_to_threat_list:action_result.parameter.context.artifact_id"], action_results=results)
+
+    ask_to_add_to_threat_list_summary_user = [item[0] for item in ask_to_add_to_threat_list_result_data]
+    ask_to_add_to_threat_list_summary_answered_at = [item[1] for item in ask_to_add_to_threat_list_result_data]
+    ask_to_add_to_threat_list_summary_sent_at = [item[2] for item in ask_to_add_to_threat_list_result_data]
+
+    parameters = []
+
+    parameters.append({
+        "input_1": ask_to_add_to_threat_list_summary_user,
+        "input_2": ask_to_add_to_threat_list_summary_answered_at,
+        "input_3": ask_to_add_to_threat_list_summary_sent_at,
+        "input_4": None,
+        "input_5": None,
+        "input_6": None,
+        "input_7": None,
+        "input_8": None,
+        "input_9": None,
+        "input_10": None,
+    })
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
+
+    phantom.custom_function(custom_function="community/debug", parameters=parameters, name="from_prompt")
 
     return
 
