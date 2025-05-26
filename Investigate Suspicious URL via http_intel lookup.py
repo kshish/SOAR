@@ -312,6 +312,7 @@ def playbook_create_record_for_http_intel_collection_1(action=None, success=None
     playbook_lookup_url_in_es_http_intel_collection_1_input_url = phantom.collect2(container=container, datapath=["playbook_lookup_url_in_es_http_intel_collection_1:playbook_input:url"])
     ask_to_add_to_threat_list_result_data = phantom.collect2(container=container, datapath=["ask_to_add_to_threat_list:action_result.summary.sent_at"], action_results=results)
     format_threat_key_value = phantom.get_format_data(name="format_threat_key_value")
+    format_record_user_field = phantom.get_format_data(name="format_record_user_field")
 
     playbook_lookup_url_in_es_http_intel_collection_1_input_url_values = [item[0] for item in playbook_lookup_url_in_es_http_intel_collection_1_input_url]
     ask_to_add_to_threat_list_summary_sent_at = [item[0] for item in ask_to_add_to_threat_list_result_data]
@@ -320,7 +321,7 @@ def playbook_create_record_for_http_intel_collection_1(action=None, success=None
         "url": playbook_lookup_url_in_es_http_intel_collection_1_input_url_values,
         "threat_key": format_threat_key_value,
         "time": ask_to_add_to_threat_list_summary_sent_at,
-        "_user": ["nobody"],
+        "_user": format_record_user_field,
         "_key": [],
     }
 
@@ -362,6 +363,32 @@ def format_threat_key_value(action=None, success=None, container=None, results=N
     ################################################################################
 
     phantom.format(container=container, template=template, parameters=parameters, name="format_threat_key_value")
+
+    format_record_user_field(container=container)
+
+    return
+
+
+@phantom.playbook_block()
+def format_record_user_field(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("format_record_user_field() called")
+
+    template = """nobody"""
+
+    # parameter list for template variable replacement
+    parameters = []
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_record_user_field")
 
     playbook_create_record_for_http_intel_collection_1(container=container)
 

@@ -102,14 +102,21 @@
                     "targetPort": "14_in"
                 },
                 {
-                    "id": "port_14_to_port_13",
+                    "id": "port_14_to_port_15",
                     "sourceNode": "14",
                     "sourcePort": "14_out",
+                    "targetNode": "15",
+                    "targetPort": "15_in"
+                },
+                {
+                    "id": "port_15_to_port_13",
+                    "sourceNode": "15",
+                    "sourcePort": "15_out",
                     "targetNode": "13",
                     "targetPort": "13_in"
                 }
             ],
-            "hash": "2fad4e5b72b65f0c580fe4e435683fc8e65d1f97",
+            "hash": "cfd033c0c2b167ae3e63e52eb791dbe59ee3472a",
             "nodes": {
                 "0": {
                     "data": {
@@ -294,7 +301,7 @@
                             },
                             "_user": {
                                 "datapaths": [
-                                    "nobody"
+                                    "format_record_user_field:formatted_data"
                                 ],
                                 "deduplicate": false
                             },
@@ -337,8 +344,8 @@
                     "id": "13",
                     "type": "playbook",
                     "warnings": {},
-                    "x": 1080,
-                    "y": 1620
+                    "x": 1060,
+                    "y": 1740
                 },
                 "14": {
                     "data": {
@@ -362,6 +369,27 @@
                     "warnings": {},
                     "x": 1070,
                     "y": 1484.5
+                },
+                "15": {
+                    "data": {
+                        "advanced": {
+                            "customName": "Format record user field",
+                            "customNameId": 0,
+                            "join": []
+                        },
+                        "functionId": 4,
+                        "functionName": "format_record_user_field",
+                        "id": "15",
+                        "parameters": [],
+                        "template": "nobody",
+                        "type": "format"
+                    },
+                    "errors": {},
+                    "id": "15",
+                    "type": "format",
+                    "warnings": {},
+                    "x": 1060,
+                    "y": 1624.5
                 },
                 "2": {
                     "data": {
@@ -831,7 +859,7 @@
         "schema": "5.0.19",
         "version": "6.4.1.353"
     },
-    "create_time": "2025-05-26T23:07:04.030899+00:00",
+    "create_time": "2025-05-26T23:28:50.747856+00:00",
     "draft_mode": false,
     "labels": [
         "*"
