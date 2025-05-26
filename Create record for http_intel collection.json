@@ -51,7 +51,7 @@
                     "type": "start",
                     "warnings": {},
                     "x": 1000,
-                    "y": 419.99999999999966
+                    "y": 419.99999999999955
                 },
                 "1": {
                     "data": {
@@ -67,7 +67,7 @@
                     "type": "end",
                     "warnings": {},
                     "x": 1000,
-                    "y": 1080
+                    "y": 1200
                 },
                 "2": {
                     "data": {
@@ -188,13 +188,15 @@
         },
         "input_spec": [
             {
-                "contains": [],
-                "description": "",
+                "contains": [
+                    "url"
+                ],
+                "description": "Provide URL",
                 "name": "url"
             },
             {
                 "contains": [],
-                "description": "",
+                "description": "Provide threat key",
                 "name": "threat key"
             },
             {
@@ -217,10 +219,10 @@
         "playbook_trigger": "artifact_created",
         "playbook_type": "data",
         "python_version": "3.9",
-        "schema": "5.0.17",
-        "version": "6.4.1.338"
+        "schema": "5.0.19",
+        "version": "6.4.1.353"
     },
-    "create_time": "2025-05-21T05:36:17.342342+00:00",
+    "create_time": "2025-05-26T23:02:21.565810+00:00",
     "draft_mode": false,
     "labels": [
         "*"
