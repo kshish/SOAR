@@ -35,7 +35,7 @@
                     "targetPort": "2_in"
                 }
             ],
-            "hash": "6d1c68e51a572f6472c797fa7a07386e494f6970",
+            "hash": "cc1f34afb86e5a9e9cf260d35272b93652044bcc",
             "nodes": {
                 "0": {
                     "data": {
@@ -127,7 +127,7 @@
                         "parameters": [
                             "playbook_input:url",
                             "playbook_input:threat_key",
-                            "playbook_input:time",
+                            "1748302282",
                             "playbook_input:_key",
                             "playbook_input:_user"
                         ],
@@ -222,7 +222,7 @@
         "schema": "5.0.19",
         "version": "6.4.1.353"
     },
-    "create_time": "2025-05-26T23:02:21.565810+00:00",
+    "create_time": "2025-05-26T23:41:31.808768+00:00",
     "draft_mode": false,
     "labels": [
         "*"
