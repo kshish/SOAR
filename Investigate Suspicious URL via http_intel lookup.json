@@ -109,20 +109,28 @@
                     "targetPort": "15_in"
                 },
                 {
-                    "id": "port_15_to_port_13",
-                    "sourceNode": "15",
-                    "sourcePort": "15_out",
-                    "targetNode": "13",
-                    "targetPort": "13_in"
-                },
-                {
                     "id": "port_11_to_port_16",
                     "sourceNode": "11",
                     "sourcePort": "11_out",
                     "targetNode": "16",
                     "targetPort": "16_in"
+                },
+                {
+                    "id": "port_15_to_port_17",
+                    "sourceNode": "15",
+                    "sourcePort": "15_out",
+                    "targetNode": "17",
+                    "targetPort": "17_in"
+                },
+                {
+                    "id": "port_17_to_port_13",
+                    "sourceNode": "17",
+                    "sourcePort": "17_out",
+                    "targetNode": "13",
+                    "targetPort": "13_in"
                 }
             ],
+            "hash": "076e19cba44111af762957714a29cabc0ea31773",
             "nodes": {
                 "0": {
                     "data": {
@@ -321,7 +329,7 @@
                             },
                             "time": {
                                 "datapaths": [
-                                    "ask_to_add_to_threat_list:action_result.summary.sent_at"
+                                    "datetime_modify_7:custom_function_result.data.epoch_time"
                                 ],
                                 "deduplicate": false
                             },
@@ -353,7 +361,7 @@
                     "type": "playbook",
                     "warnings": {},
                     "x": 1060,
-                    "y": 1740
+                    "y": 1880
                 },
                 "14": {
                     "data": {
@@ -582,6 +590,111 @@
                     "warnings": {},
                     "x": 1260,
                     "y": 1424.5
+                },
+                "17": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "customFunction": {
+                            "draftMode": false,
+                            "name": "datetime_modify",
+                            "repoName": "community"
+                        },
+                        "functionId": 7,
+                        "functionName": "datetime_modify_7",
+                        "id": "17",
+                        "loop": {
+                            "enabled": false,
+                            "exitAfterUnit": "m",
+                            "exitAfterValue": 10,
+                            "exitConditionEnabled": false,
+                            "exitLoopAfter": 2,
+                            "pauseUnit": "m",
+                            "pauseValue": 2
+                        },
+                        "selectMore": false,
+                        "type": "utility",
+                        "utilities": {
+                            "datetime_modify": {
+                                "description": "Change a timestamp by adding or subtracting minutes, hours, or days.",
+                                "fields": [
+                                    {
+                                        "dataTypes": [
+                                            ""
+                                        ],
+                                        "description": "The datetime to modify, which should be provided in a string format determined by input_format_string",
+                                        "inputType": "item",
+                                        "label": "input_datetime",
+                                        "name": "input_datetime",
+                                        "placeholder": "2020-06-27T14:53:08.219016Z",
+                                        "renderType": "datapath",
+                                        "required": false
+                                    },
+                                    {
+                                        "dataTypes": [],
+                                        "description": "The format string to use for the input according to the Python's datetime.strptime() formatting rules. If none is provided the default will be '%Y-%m-%dT%H:%M:%S.%fZ'. In addition to strptime() formats, the special format \"epoch\" can be used to accept unix epoch timestamps.",
+                                        "inputType": "item",
+                                        "label": "input_format_string",
+                                        "name": "input_format_string",
+                                        "placeholder": "%Y-%m-%dT%H:%M:%S.%fZ",
+                                        "renderType": "datapath",
+                                        "required": false
+                                    },
+                                    {
+                                        "dataTypes": [
+                                            ""
+                                        ],
+                                        "description": "Choose a unit to modify the date by, which must be either seconds, minutes, hours, or days. If none is provided the default will be 'minutes'",
+                                        "inputType": "item",
+                                        "label": "modification_unit",
+                                        "name": "modification_unit",
+                                        "placeholder": "minutes",
+                                        "renderType": "datapath",
+                                        "required": false
+                                    },
+                                    {
+                                        "dataTypes": [],
+                                        "description": "The number of seconds, minutes, hours, or days to add or subtract. Use a negative number such as -1.5 to subtract time. Defaults to zero.",
+                                        "inputType": "item",
+                                        "label": "amount_to_modify",
+                                        "name": "amount_to_modify",
+                                        "placeholder": "0",
+                                        "renderType": "datapath",
+                                        "required": false
+                                    },
+                                    {
+                                        "dataTypes": [],
+                                        "description": "The format string to use for the output according to the Python's datetime.strftime() formatting rules. If none is provided the default will be '%Y-%m-%dT%H:%M:%S.%fZ'.",
+                                        "inputType": "item",
+                                        "label": "output_format_string",
+                                        "name": "output_format_string",
+                                        "placeholder": "%Y-%m-%dT%H:%M:%S.%fZ",
+                                        "renderType": "datapath",
+                                        "required": false
+                                    }
+                                ],
+                                "label": "datetime_modify",
+                                "name": "datetime_modify"
+                            }
+                        },
+                        "utilityType": "custom_function",
+                        "values": {
+                            "datetime_modify": {
+                                "amount_to_modify": null,
+                                "input_datetime": null,
+                                "input_format_string": null,
+                                "modification_unit": null,
+                                "output_format_string": null
+                            }
+                        }
+                    },
+                    "errors": {},
+                    "id": "17",
+                    "type": "utility",
+                    "warnings": {},
+                    "x": 1060,
+                    "y": 1740
                 },
                 "2": {
                     "data": {
@@ -1051,7 +1164,7 @@
         "schema": "5.0.19",
         "version": "6.4.1.353"
     },
-    "create_time": "2025-05-26T23:48:06.310903+00:00",
+    "create_time": "2025-05-26T23:57:36.811128+00:00",
     "draft_mode": false,
     "labels": [
         "*"

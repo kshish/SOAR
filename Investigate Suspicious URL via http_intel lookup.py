@@ -322,17 +322,17 @@ def playbook_create_record_for_http_intel_collection_1(action=None, success=None
     phantom.debug("playbook_create_record_for_http_intel_collection_1() called")
 
     playbook_lookup_url_in_es_http_intel_collection_1_input_url = phantom.collect2(container=container, datapath=["playbook_lookup_url_in_es_http_intel_collection_1:playbook_input:url"])
-    ask_to_add_to_threat_list_result_data = phantom.collect2(container=container, datapath=["ask_to_add_to_threat_list:action_result.summary.sent_at"], action_results=results)
+    datetime_modify_7__result = phantom.collect2(container=container, datapath=["datetime_modify_7:custom_function_result.data.epoch_time"])
     format_threat_key_value = phantom.get_format_data(name="format_threat_key_value")
     format_record_user_field = phantom.get_format_data(name="format_record_user_field")
 
     playbook_lookup_url_in_es_http_intel_collection_1_input_url_values = [item[0] for item in playbook_lookup_url_in_es_http_intel_collection_1_input_url]
-    ask_to_add_to_threat_list_summary_sent_at = [item[0] for item in ask_to_add_to_threat_list_result_data]
+    datetime_modify_7_data_epoch_time = [item[0] for item in datetime_modify_7__result]
 
     inputs = {
         "url": playbook_lookup_url_in_es_http_intel_collection_1_input_url_values,
         "threat_key": format_threat_key_value,
-        "time": ask_to_add_to_threat_list_summary_sent_at,
+        "time": datetime_modify_7_data_epoch_time,
         "_user": format_record_user_field,
         "_key": ["test"],
     }
@@ -402,7 +402,7 @@ def format_record_user_field(action=None, success=None, container=None, results=
 
     phantom.format(container=container, template=template, parameters=parameters, name="format_record_user_field")
 
-    playbook_create_record_for_http_intel_collection_1(container=container)
+    datetime_modify_7(container=container)
 
     return
 
@@ -443,6 +443,35 @@ def from_prompt(action=None, success=None, container=None, results=None, handle=
     ################################################################################
 
     phantom.custom_function(custom_function="community/debug", parameters=parameters, name="from_prompt")
+
+    return
+
+
+@phantom.playbook_block()
+def datetime_modify_7(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("datetime_modify_7() called")
+
+    parameters = []
+
+    parameters.append({
+        "input_datetime": None,
+        "input_format_string": None,
+        "modification_unit": None,
+        "amount_to_modify": None,
+        "output_format_string": None,
+    })
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
+
+    phantom.custom_function(custom_function="community/datetime_modify", parameters=parameters, name="datetime_modify_7", callback=playbook_create_record_for_http_intel_collection_1)
 
     return
 
