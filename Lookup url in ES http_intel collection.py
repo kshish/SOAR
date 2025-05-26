@@ -41,7 +41,7 @@ def format_endpoint(action=None, success=None, container=None, results=None, han
     phantom.format(container=container, template=template, parameters=parameters, name="format_endpoint")
 
     get_data_1(container=container)
-    debug_1(container=container)
+    formatted_endpoint(container=container)
 
     return
 
@@ -71,7 +71,7 @@ def get_data_1(action=None, success=None, container=None, results=None, handle=N
     ## Custom Code End
     ################################################################################
 
-    phantom.act("get data", parameters=parameters, name="get_data_1", assets=["splunk es"])
+    phantom.act("get data", parameters=parameters, name="get_data_1", assets=["splunk es"], callback=returned_threat_key)
 
     return
 
@@ -105,8 +105,8 @@ def format_query(action=None, success=None, container=None, results=None, handle
 
 
 @phantom.playbook_block()
-def debug_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
-    phantom.debug("debug_1() called")
+def formatted_endpoint(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("formatted_endpoint() called")
 
     format_endpoint = phantom.get_format_data(name="format_endpoint")
 
@@ -135,7 +135,45 @@ def debug_1(action=None, success=None, container=None, results=None, handle=None
     ## Custom Code End
     ################################################################################
 
-    phantom.custom_function(custom_function="community/debug", parameters=parameters, name="debug_1")
+    phantom.custom_function(custom_function="community/debug", parameters=parameters, name="formatted_endpoint")
+
+    return
+
+
+@phantom.playbook_block()
+def returned_threat_key(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("returned_threat_key() called")
+
+    get_data_1_result_data = phantom.collect2(container=container, datapath=["get_data_1:action_result.data.*.parsed_response_body.record.*.threat_key","get_data_1:action_result.parameter.context.artifact_id"], action_results=results)
+
+    get_data_1_result_item_0 = [item[0] for item in get_data_1_result_data]
+
+    parameters = []
+
+    parameters.append({
+        "input_1": get_data_1_result_item_0,
+        "input_2": None,
+        "input_3": None,
+        "input_4": None,
+        "input_5": None,
+        "input_6": None,
+        "input_7": None,
+        "input_8": None,
+        "input_9": None,
+        "input_10": None,
+    })
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
+
+    phantom.custom_function(custom_function="community/debug", parameters=parameters, name="returned_threat_key")
 
     return
 
