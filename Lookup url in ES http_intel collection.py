@@ -144,7 +144,7 @@ def formatted_endpoint(action=None, success=None, container=None, results=None, 
 def returned_threat_key(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
     phantom.debug("returned_threat_key() called")
 
-    get_data_1_result_data = phantom.collect2(container=container, datapath=["get_data_1:action_result.data.*.parsed_response_body.record.*.threat_key","get_data_1:action_result.parameter.context.artifact_id"], action_results=results)
+    get_data_1_result_data = phantom.collect2(container=container, datapath=["get_data_1:action_result.data.*.parsed_response_body.*.threat_key","get_data_1:action_result.parameter.context.artifact_id"], action_results=results)
 
     get_data_1_result_item_0 = [item[0] for item in get_data_1_result_data]
 
@@ -182,7 +182,7 @@ def returned_threat_key(action=None, success=None, container=None, results=None,
 def on_finish(container, summary):
     phantom.debug("on_finish() called")
 
-    get_data_1_result_data = phantom.collect2(container=container, datapath=["get_data_1:action_result.data.*.parsed_response_body.record.*.threat_key"])
+    get_data_1_result_data = phantom.collect2(container=container, datapath=["get_data_1:action_result.data.*.parsed_response_body.*.threat_key"])
 
     get_data_1_result_item_0 = [item[0] for item in get_data_1_result_data]
 

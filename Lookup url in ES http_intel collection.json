@@ -49,7 +49,7 @@
                     "targetPort": "7_in"
                 }
             ],
-            "hash": "c4d4f316f5239b209b4051bc2fe782b49f0243c4",
+            "hash": "23be4d32e6bf5dd083a6c44e57541189e36f197d",
             "nodes": {
                 "0": {
                     "data": {
@@ -555,7 +555,7 @@
                         "values": {
                             "debug": {
                                 "input_1": [
-                                    "get_data_1:action_result.data.*.parsed_response_body.record.*.threat_key"
+                                    "get_data_1:action_result.data.*.parsed_response_body.*.threat_key"
                                 ],
                                 "input_10": null,
                                 "input_2": null,
@@ -592,7 +592,7 @@
             {
                 "contains": [],
                 "datapaths": [
-                    "get_data_1:action_result.data.*.parsed_response_body.record.*.threat_key"
+                    "get_data_1:action_result.data.*.parsed_response_body.*.threat_key"
                 ],
                 "deduplicate": false,
                 "description": "This is the threat key looked up from http_intel",
@@ -606,7 +606,7 @@
         "schema": "5.0.19",
         "version": "6.4.1.353"
     },
-    "create_time": "2025-05-26T22:13:02.863531+00:00",
+    "create_time": "2025-05-26T22:15:41.622321+00:00",
     "draft_mode": false,
     "labels": [
         "*"
