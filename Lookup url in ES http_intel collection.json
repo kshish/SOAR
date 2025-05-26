@@ -1,0 +1,221 @@
+{
+    "blockly": false,
+    "blockly_xml": "<xml></xml>",
+    "category": "Uncategorized",
+    "coa": {
+        "data": {
+            "description": "Lookup url in ES http_intel collection and return threat key",
+            "edges": [
+                {
+                    "id": "port_2_to_port_3",
+                    "sourceNode": "2",
+                    "sourcePort": "2_out",
+                    "targetNode": "3",
+                    "targetPort": "3_in"
+                },
+                {
+                    "id": "port_4_to_port_2",
+                    "sourceNode": "4",
+                    "sourcePort": "4_out",
+                    "targetNode": "2",
+                    "targetPort": "2_in"
+                },
+                {
+                    "id": "port_0_to_port_4",
+                    "sourceNode": "0",
+                    "sourcePort": "0_out",
+                    "targetNode": "4",
+                    "targetPort": "4_in"
+                },
+                {
+                    "id": "port_3_to_port_1",
+                    "sourceNode": "3",
+                    "sourcePort": "3_out",
+                    "targetNode": "1",
+                    "targetPort": "1_in"
+                }
+            ],
+            "hash": "ae3f526be0c10e2db93479162b8c984054d09756",
+            "nodes": {
+                "0": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "functionName": "on_start",
+                        "id": "0",
+                        "type": "start"
+                    },
+                    "errors": {},
+                    "id": "0",
+                    "type": "start",
+                    "warnings": {},
+                    "x": 1000,
+                    "y": 400
+                },
+                "1": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "customDatapaths": {
+                            "get_data_1": {
+                                "action_result.data.*.parsed_response_body.threat_key": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "label": "action_result.data.*.parsed_response_body.threat_key",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.threat_key"
+                                }
+                            }
+                        },
+                        "functionName": "on_finish",
+                        "id": "1",
+                        "type": "end"
+                    },
+                    "errors": {},
+                    "id": "1",
+                    "type": "end",
+                    "warnings": {},
+                    "x": 1000,
+                    "y": 960
+                },
+                "2": {
+                    "data": {
+                        "advanced": {
+                            "customName": "format endpoint",
+                            "customNameId": 0,
+                            "join": []
+                        },
+                        "functionId": 1,
+                        "functionName": "format_endpoint",
+                        "id": "2",
+                        "nestedNodeChildren": [],
+                        "nestedNodeParent": null,
+                        "parameters": [
+                            "format_query:formatted_data"
+                        ],
+                        "template": "storage/collections/data/http_intel?query=\n",
+                        "type": "format"
+                    },
+                    "errors": {},
+                    "id": "2",
+                    "type": "format",
+                    "warnings": {
+                        "config": [
+                            "Reconfigure invalid datapath."
+                        ]
+                    },
+                    "x": 980,
+                    "y": 640
+                },
+                "3": {
+                    "data": {
+                        "action": "get data",
+                        "actionType": "investigate",
+                        "advanced": {
+                            "join": []
+                        },
+                        "connector": "HTTP",
+                        "connectorConfigs": [
+                            "splunk es"
+                        ],
+                        "connectorId": "290b7499-0374-4930-9cdc-5e9b05d65827",
+                        "connectorVersion": "v1",
+                        "functionId": 1,
+                        "functionName": "get_data_1",
+                        "id": "3",
+                        "loop": {
+                            "enabled": false,
+                            "exitAfterUnit": "m",
+                            "exitAfterValue": 10,
+                            "exitConditionEnabled": false,
+                            "exitLoopAfter": 2,
+                            "pauseUnit": "m",
+                            "pauseValue": 2
+                        },
+                        "nestedNodeChildren": [],
+                        "nestedNodeParent": null,
+                        "parameters": {
+                            "location": "format_endpoint:formatted_data"
+                        },
+                        "requiredParameters": [
+                            {
+                                "data_type": "string",
+                                "field": "location"
+                            }
+                        ],
+                        "type": "action"
+                    },
+                    "errors": {},
+                    "id": "3",
+                    "type": "action",
+                    "warnings": {
+                        "config": [
+                            "Reconfigure invalid datapath."
+                        ]
+                    },
+                    "x": 980,
+                    "y": 780
+                },
+                "4": {
+                    "data": {
+                        "advanced": {
+                            "customName": "format query",
+                            "customNameId": 0,
+                            "join": []
+                        },
+                        "functionId": 2,
+                        "functionName": "format_query",
+                        "id": "4",
+                        "nestedNodeChildren": [],
+                        "nestedNodeParent": null,
+                        "parameters": [
+                            "playbook_input:url"
+                        ],
+                        "template": "{{\"url\":\"{0}\"}}\n",
+                        "type": "format"
+                    },
+                    "errors": {},
+                    "id": "4",
+                    "type": "format",
+                    "warnings": {},
+                    "x": 980,
+                    "y": 520
+                }
+            },
+            "notes": ""
+        },
+        "input_spec": [
+            {
+                "contains": [
+                    "url"
+                ],
+                "description": "Provide the URL to lookup",
+                "name": "url"
+            }
+        ],
+        "output_spec": [
+            {
+                "contains": [],
+                "datapaths": [
+                    "get_data_1:action_result.data.*.parsed_response_body.threat_key"
+                ],
+                "deduplicate": false,
+                "description": "This is the threat key looked up from http_intel",
+                "metadata": {},
+                "name": "Threat Key"
+            }
+        ],
+        "playbook_trigger": "artifact_created",
+        "playbook_type": "data",
+        "python_version": "3.9",
+        "schema": "5.0.19",
+        "version": "6.4.1.353"
+    },
+    "create_time": "2025-05-26T21:32:36.166073+00:00",
+    "draft_mode": false,
+    "labels": [
+        "*"
+    ],
+    "tags": []
+}
