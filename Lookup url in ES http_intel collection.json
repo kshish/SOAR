@@ -49,7 +49,7 @@
                     "targetPort": "7_in"
                 }
             ],
-            "hash": "fc83144112184f991b98b530fd9cc82d83948530",
+            "hash": "7f751dec06bbaa2e720014246445d4db3a7de2b7",
             "nodes": {
                 "0": {
                     "data": {
@@ -602,7 +602,7 @@
             {
                 "contains": [],
                 "datapaths": [
-                    "get_data_1:action_result.data.*.parsed_response_body.threat_key"
+                    "get_data_1:action_result.data.*.parsed_response_body.*.threat_key"
                 ],
                 "deduplicate": false,
                 "description": "This is the threat key looked up from http_intel",
@@ -616,7 +616,7 @@
         "schema": "5.0.19",
         "version": "6.4.1.353"
     },
-    "create_time": "2025-05-27T05:52:08.711791+00:00",
+    "create_time": "2025-05-27T06:01:24.208304+00:00",
     "draft_mode": false,
     "labels": [
         "*"
