@@ -87,7 +87,7 @@ def format_json_body(action=None, success=None, container=None, results=None, ha
 def format_collection_update_endpoint(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
     phantom.debug("format_collection_update_endpoint() called")
 
-    template = """storage/collections/data/http_intel\n"""
+    template = """storage/collections/data/local_http_intel\n"""
 
     # parameter list for template variable replacement
     parameters = []
