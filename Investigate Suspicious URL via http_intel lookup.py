@@ -333,7 +333,7 @@ def playbook_create_record_for_http_intel_collection_1(action=None, success=None
         "threat_key": format_threat_key_value,
         "time": format_time,
         "_user": format_record_user_field,
-        "_key": ["test"],
+        "_key": [],
     }
 
     ################################################################################
