@@ -144,7 +144,7 @@
                     "targetPort": "13_in"
                 }
             ],
-            "hash": "7916bc38f293e6be919dbed92d53c2c000b1ee1a",
+            "hash": "d4e39baaf8edb02e359200dc74e7f201dd3fd456",
             "nodes": {
                 "0": {
                     "data": {
@@ -175,8 +175,8 @@
                     "id": "1",
                     "type": "end",
                     "warnings": {},
-                    "x": 800,
-                    "y": 1620
+                    "x": 600,
+                    "y": 1740
                 },
                 "10": {
                     "data": {
@@ -372,7 +372,7 @@
                     "id": "13",
                     "type": "playbook",
                     "warnings": {},
-                    "x": 1060,
+                    "x": 1020,
                     "y": 2080
                 },
                 "14": {
@@ -386,15 +386,15 @@
                         "functionName": "format_threat_key_value",
                         "id": "14",
                         "parameters": [],
-                        "template": "local intel added by",
+                        "template": "local intel added",
                         "type": "format"
                     },
                     "errors": {},
                     "id": "14",
                     "type": "format",
                     "warnings": {},
-                    "x": 1070,
-                    "y": 1484.5
+                    "x": 1020,
+                    "y": 1480
                 },
                 "15": {
                     "data": {
@@ -414,13 +414,13 @@
                     "id": "15",
                     "type": "format",
                     "warnings": {},
-                    "x": 1060,
-                    "y": 1624.5
+                    "x": 1020,
+                    "y": 1620
                 },
                 "16": {
                     "data": {
                         "advanced": {
-                            "customName": "from prompt",
+                            "customName": "debug from prompt",
                             "customNameId": 0,
                             "join": []
                         },
@@ -430,7 +430,7 @@
                             "repoName": "community"
                         },
                         "functionId": 6,
-                        "functionName": "from_prompt",
+                        "functionName": "debug_from_prompt",
                         "id": "16",
                         "loop": {
                             "enabled": false,
@@ -598,8 +598,8 @@
                     "id": "16",
                     "type": "utility",
                     "warnings": {},
-                    "x": 1260,
-                    "y": 1424.5
+                    "x": 1340,
+                    "y": 1480
                 },
                 "17": {
                     "data": {
@@ -703,13 +703,13 @@
                     "id": "17",
                     "type": "utility",
                     "warnings": {},
-                    "x": 1060,
+                    "x": 1020,
                     "y": 1740
                 },
                 "18": {
                     "data": {
                         "advanced": {
-                            "customName": "date time",
+                            "customName": "debug date time",
                             "customNameId": 0,
                             "join": []
                         },
@@ -719,7 +719,7 @@
                             "repoName": "community"
                         },
                         "functionId": 8,
-                        "functionName": "date_time",
+                        "functionName": "debug_date_time",
                         "id": "18",
                         "loop": {
                             "enabled": false,
@@ -914,7 +914,7 @@
                     "id": "19",
                     "type": "format",
                     "warnings": {},
-                    "x": 1060,
+                    "x": 1020,
                     "y": 1920
                 },
                 "2": {
@@ -1385,7 +1385,7 @@
         "schema": "5.0.19",
         "version": "6.4.1.353"
     },
-    "create_time": "2025-05-27T04:39:16.586119+00:00",
+    "create_time": "2025-05-27T05:51:51.569075+00:00",
     "draft_mode": false,
     "labels": [
         "*"

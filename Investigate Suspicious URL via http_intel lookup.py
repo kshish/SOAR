@@ -287,7 +287,7 @@ def ask_to_add_to_threat_list_callback(action=None, success=None, container=None
 
     
     decision_2(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=filtered_artifacts, filtered_results=filtered_results)
-    from_prompt(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=filtered_artifacts, filtered_results=filtered_results)
+    debug_from_prompt(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=filtered_artifacts, filtered_results=filtered_results)
 
 
     return
@@ -356,7 +356,7 @@ def playbook_create_record_for_http_intel_collection_1(action=None, success=None
 def format_threat_key_value(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
     phantom.debug("format_threat_key_value() called")
 
-    template = """local intel added by"""
+    template = """local intel added"""
 
     # parameter list for template variable replacement
     parameters = []
@@ -405,8 +405,8 @@ def format_record_user_field(action=None, success=None, container=None, results=
 
 
 @phantom.playbook_block()
-def from_prompt(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
-    phantom.debug("from_prompt() called")
+def debug_from_prompt(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("debug_from_prompt() called")
 
     ask_to_add_to_threat_list_result_data = phantom.collect2(container=container, datapath=["ask_to_add_to_threat_list:action_result.summary.user","ask_to_add_to_threat_list:action_result.summary.answered_at","ask_to_add_to_threat_list:action_result.summary.sent_at","ask_to_add_to_threat_list:action_result.parameter.context.artifact_id"], action_results=results)
 
@@ -439,7 +439,7 @@ def from_prompt(action=None, success=None, container=None, results=None, handle=
     ## Custom Code End
     ################################################################################
 
-    phantom.custom_function(custom_function="community/debug", parameters=parameters, name="from_prompt")
+    phantom.custom_function(custom_function="community/debug", parameters=parameters, name="debug_from_prompt")
 
     return
 
@@ -478,7 +478,7 @@ def datetime_modify_7_callback(action=None, success=None, container=None, result
     phantom.debug("datetime_modify_7_callback() called")
 
     
-    date_time(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=filtered_artifacts, filtered_results=filtered_results)
+    debug_date_time(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=filtered_artifacts, filtered_results=filtered_results)
     format_time(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=filtered_artifacts, filtered_results=filtered_results)
 
 
@@ -486,8 +486,8 @@ def datetime_modify_7_callback(action=None, success=None, container=None, result
 
 
 @phantom.playbook_block()
-def date_time(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
-    phantom.debug("date_time() called")
+def debug_date_time(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("debug_date_time() called")
 
     datetime_modify_7__result = phantom.collect2(container=container, datapath=["datetime_modify_7:custom_function_result.data.datetime_string","datetime_modify_7:custom_function_result.data.epoch_time","datetime_modify_7:custom_function_result.data.seconds_modified","datetime_modify_7:custom_function_result.success","datetime_modify_7:custom_function_result.message"])
 
@@ -522,7 +522,7 @@ def date_time(action=None, success=None, container=None, results=None, handle=No
     ## Custom Code End
     ################################################################################
 
-    phantom.custom_function(custom_function="community/debug", parameters=parameters, name="date_time")
+    phantom.custom_function(custom_function="community/debug", parameters=parameters, name="debug_date_time")
 
     return
 
