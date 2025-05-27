@@ -49,7 +49,7 @@
                     "targetPort": "7_in"
                 }
             ],
-            "hash": "23be4d32e6bf5dd083a6c44e57541189e36f197d",
+            "hash": "fc83144112184f991b98b530fd9cc82d83948530",
             "nodes": {
                 "0": {
                     "data": {
@@ -74,18 +74,12 @@
                         },
                         "customDatapaths": {
                             "get_data_1": {
-                                "action_result.data.*.parsed_response_body.record": {
+                                "action_result.data.*.parsed_response_body.threat_key": {
                                     "contains": [],
                                     "isCustomDatapath": true,
                                     "isDatapathArray": true,
-                                    "label": "action_result.data.*.parsed_response_body.record",
-                                    "value": "get_data_1:action_result.data.*.parsed_response_body.record"
-                                },
-                                "action_result.data.*.parsed_response_body.record.*.threat_key": {
-                                    "contains": [],
-                                    "isCustomDatapath": true,
-                                    "label": "action_result.data.*.parsed_response_body.record.*.threat_key",
-                                    "value": "get_data_1:action_result.data.*.parsed_response_body.record.*.threat_key"
+                                    "label": "action_result.data.*.parsed_response_body.threat_key",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.threat_key"
                                 }
                             }
                         },
@@ -387,21 +381,7 @@
                             "join": []
                         },
                         "customDatapaths": {
-                            "get_data_1": {
-                                "action_result.data.*.parsed_response_body.record": {
-                                    "contains": [],
-                                    "isCustomDatapath": true,
-                                    "isDatapathArray": true,
-                                    "label": "action_result.data.*.parsed_response_body.record",
-                                    "value": "get_data_1:action_result.data.*.parsed_response_body.record"
-                                },
-                                "action_result.data.*.parsed_response_body.record.*.threat_key": {
-                                    "contains": [],
-                                    "isCustomDatapath": true,
-                                    "label": "action_result.data.*.parsed_response_body.record.*.threat_key",
-                                    "value": "get_data_1:action_result.data.*.parsed_response_body.record.*.threat_key"
-                                }
-                            }
+                            "get_data_1": {}
                         },
                         "customFunction": {
                             "draftMode": false,
@@ -574,7 +554,37 @@
                     "type": "utility",
                     "warnings": {},
                     "x": 1280,
-                    "y": 964.5
+                    "y": 960
+                },
+                "8": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "functionId": 3,
+                        "functionName": "call_api_3",
+                        "id": "8",
+                        "loop": {
+                            "enabled": false,
+                            "exitAfterUnit": "m",
+                            "exitAfterValue": 10,
+                            "exitConditionEnabled": false,
+                            "exitLoopAfter": 2,
+                            "pauseUnit": "m",
+                            "pauseValue": 2
+                        },
+                        "type": "utility"
+                    },
+                    "errors": {},
+                    "id": "8",
+                    "type": "utility",
+                    "warnings": {
+                        "context": [
+                            "Connect block to playbook flow."
+                        ]
+                    },
+                    "x": 695.6668090820312,
+                    "y": 898.4999389648438
                 }
             },
             "notes": ""
@@ -592,7 +602,7 @@
             {
                 "contains": [],
                 "datapaths": [
-                    "get_data_1:action_result.data.*.parsed_response_body.*.threat_key"
+                    "get_data_1:action_result.data.*.parsed_response_body.threat_key"
                 ],
                 "deduplicate": false,
                 "description": "This is the threat key looked up from http_intel",
@@ -606,7 +616,7 @@
         "schema": "5.0.19",
         "version": "6.4.1.353"
     },
-    "create_time": "2025-05-26T22:15:41.622321+00:00",
+    "create_time": "2025-05-27T05:52:08.711791+00:00",
     "draft_mode": false,
     "labels": [
         "*"
