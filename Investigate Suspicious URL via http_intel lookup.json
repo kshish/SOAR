@@ -144,7 +144,7 @@
                     "targetPort": "13_in"
                 }
             ],
-            "hash": "ea413beda0079c22a5726e6920c18fdcafa67f82",
+            "hash": "7916bc38f293e6be919dbed92d53c2c000b1ee1a",
             "nodes": {
                 "0": {
                     "data": {
@@ -386,7 +386,7 @@
                         "functionName": "format_threat_key_value",
                         "id": "14",
                         "parameters": [],
-                        "template": "local intel added by\n",
+                        "template": "local intel added by",
                         "type": "format"
                     },
                     "errors": {},
@@ -907,7 +907,7 @@
                         "parameters": [
                             "datetime_modify_7:custom_function_result.data.epoch_time"
                         ],
-                        "template": "{0}\n",
+                        "template": "{0}",
                         "type": "format"
                     },
                     "errors": {},
@@ -1385,7 +1385,7 @@
         "schema": "5.0.19",
         "version": "6.4.1.353"
     },
-    "create_time": "2025-05-27T00:28:40.341767+00:00",
+    "create_time": "2025-05-27T04:39:16.586119+00:00",
     "draft_mode": false,
     "labels": [
         "*"
