@@ -144,7 +144,7 @@
                     "targetPort": "13_in"
                 }
             ],
-            "hash": "0959a0c4719ed7b69dfed678e8541dc7fd537443",
+            "hash": "ea413beda0079c22a5726e6920c18fdcafa67f82",
             "nodes": {
                 "0": {
                     "data": {
@@ -385,10 +385,8 @@
                         "functionId": 3,
                         "functionName": "format_threat_key_value",
                         "id": "14",
-                        "parameters": [
-                            "ask_to_add_to_threat_list:action_result.summary.user"
-                        ],
-                        "template": "local intel added by {0}\n",
+                        "parameters": [],
+                        "template": "local intel added by\n",
                         "type": "format"
                     },
                     "errors": {},
@@ -1387,7 +1385,7 @@
         "schema": "5.0.19",
         "version": "6.4.1.353"
     },
-    "create_time": "2025-05-27T00:18:03.503029+00:00",
+    "create_time": "2025-05-27T00:28:40.341767+00:00",
     "draft_mode": false,
     "labels": [
         "*"

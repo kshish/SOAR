@@ -356,12 +356,10 @@ def playbook_create_record_for_http_intel_collection_1(action=None, success=None
 def format_threat_key_value(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
     phantom.debug("format_threat_key_value() called")
 
-    template = """local intel added by {0}\n"""
+    template = """local intel added by\n"""
 
     # parameter list for template variable replacement
-    parameters = [
-        "ask_to_add_to_threat_list:action_result.summary.user"
-    ]
+    parameters = []
 
     ################################################################################
     ## Custom Code Start
