@@ -61,7 +61,7 @@ def format_json_body(action=None, success=None, container=None, results=None, ha
     parameters = [
         "playbook_input:url",
         "playbook_input:threat_key",
-        "1748302282",
+        "playbook_input:time",
         "playbook_input:_key",
         "playbook_input:_user"
     ]
