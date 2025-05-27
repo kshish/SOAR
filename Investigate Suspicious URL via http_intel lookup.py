@@ -322,17 +322,16 @@ def playbook_create_record_for_http_intel_collection_1(action=None, success=None
     phantom.debug("playbook_create_record_for_http_intel_collection_1() called")
 
     playbook_lookup_url_in_es_http_intel_collection_1_input_url = phantom.collect2(container=container, datapath=["playbook_lookup_url_in_es_http_intel_collection_1:playbook_input:url"])
-    datetime_modify_7__result = phantom.collect2(container=container, datapath=["datetime_modify_7:custom_function_result.data.epoch_time"])
     format_threat_key_value = phantom.get_format_data(name="format_threat_key_value")
+    format_time = phantom.get_format_data(name="format_time")
     format_record_user_field = phantom.get_format_data(name="format_record_user_field")
 
     playbook_lookup_url_in_es_http_intel_collection_1_input_url_values = [item[0] for item in playbook_lookup_url_in_es_http_intel_collection_1_input_url]
-    datetime_modify_7_data_epoch_time = [item[0] for item in datetime_modify_7__result]
 
     inputs = {
         "url": playbook_lookup_url_in_es_http_intel_collection_1_input_url_values,
         "threat_key": format_threat_key_value,
-        "time": datetime_modify_7_data_epoch_time,
+        "time": format_time,
         "_user": format_record_user_field,
         "_key": ["test"],
     }
@@ -481,8 +480,8 @@ def datetime_modify_7_callback(action=None, success=None, container=None, result
     phantom.debug("datetime_modify_7_callback() called")
 
     
-    playbook_create_record_for_http_intel_collection_1(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=filtered_artifacts, filtered_results=filtered_results)
     date_time(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=filtered_artifacts, filtered_results=filtered_results)
+    format_time(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=filtered_artifacts, filtered_results=filtered_results)
 
 
     return
@@ -526,6 +525,34 @@ def date_time(action=None, success=None, container=None, results=None, handle=No
     ################################################################################
 
     phantom.custom_function(custom_function="community/debug", parameters=parameters, name="date_time")
+
+    return
+
+
+@phantom.playbook_block()
+def format_time(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("format_time() called")
+
+    template = """{0}\n"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "datetime_modify_7:custom_function_result.data.epoch_time"
+    ]
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_time")
+
+    playbook_create_record_for_http_intel_collection_1(container=container)
 
     return
 

@@ -123,21 +123,28 @@
                     "targetPort": "17_in"
                 },
                 {
-                    "id": "port_17_to_port_13",
-                    "sourceNode": "17",
-                    "sourcePort": "17_out",
-                    "targetNode": "13",
-                    "targetPort": "13_in"
-                },
-                {
                     "id": "port_17_to_port_18",
                     "sourceNode": "17",
                     "sourcePort": "17_out",
                     "targetNode": "18",
                     "targetPort": "18_in"
+                },
+                {
+                    "id": "port_17_to_port_19",
+                    "sourceNode": "17",
+                    "sourcePort": "17_out",
+                    "targetNode": "19",
+                    "targetPort": "19_in"
+                },
+                {
+                    "id": "port_19_to_port_13",
+                    "sourceNode": "19",
+                    "sourcePort": "19_out",
+                    "targetNode": "13",
+                    "targetPort": "13_in"
                 }
             ],
-            "hash": "7392425a790aea1ac0f3c1a4c63d9781d3b5ee72",
+            "hash": "9a57ce8b345ac0ff0ca51ea6e5f9f06095fb5d50",
             "nodes": {
                 "0": {
                     "data": {
@@ -336,7 +343,7 @@
                             },
                             "time": {
                                 "datapaths": [
-                                    "datetime_modify_7:custom_function_result.data.epoch_time"
+                                    "format_time:formatted_data"
                                 ],
                                 "deduplicate": false
                             },
@@ -368,7 +375,7 @@
                     "type": "playbook",
                     "warnings": {},
                     "x": 1060,
-                    "y": 1880
+                    "y": 2080
                 },
                 "14": {
                     "data": {
@@ -891,6 +898,29 @@
                     "x": 1320,
                     "y": 1864.5
                 },
+                "19": {
+                    "data": {
+                        "advanced": {
+                            "customName": "format time",
+                            "customNameId": 0,
+                            "join": []
+                        },
+                        "functionId": 5,
+                        "functionName": "format_time",
+                        "id": "19",
+                        "parameters": [
+                            "datetime_modify_7:custom_function_result.data.epoch_time"
+                        ],
+                        "template": "{0}\n",
+                        "type": "format"
+                    },
+                    "errors": {},
+                    "id": "19",
+                    "type": "format",
+                    "warnings": {},
+                    "x": 1060,
+                    "y": 1920
+                },
                 "2": {
                     "data": {
                         "advanced": {
@@ -1359,7 +1389,7 @@
         "schema": "5.0.19",
         "version": "6.4.1.353"
     },
-    "create_time": "2025-05-27T00:01:48.328985+00:00",
+    "create_time": "2025-05-27T00:07:43.085687+00:00",
     "draft_mode": false,
     "labels": [
         "*"
