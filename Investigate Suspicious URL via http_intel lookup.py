@@ -471,7 +471,61 @@ def datetime_modify_7(action=None, success=None, container=None, results=None, h
     ## Custom Code End
     ################################################################################
 
-    phantom.custom_function(custom_function="community/datetime_modify", parameters=parameters, name="datetime_modify_7", callback=playbook_create_record_for_http_intel_collection_1)
+    phantom.custom_function(custom_function="community/datetime_modify", parameters=parameters, name="datetime_modify_7", callback=datetime_modify_7_callback)
+
+    return
+
+
+@phantom.playbook_block()
+def datetime_modify_7_callback(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("datetime_modify_7_callback() called")
+
+    
+    playbook_create_record_for_http_intel_collection_1(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=filtered_artifacts, filtered_results=filtered_results)
+    date_time(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=filtered_artifacts, filtered_results=filtered_results)
+
+
+    return
+
+
+@phantom.playbook_block()
+def date_time(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("date_time() called")
+
+    datetime_modify_7__result = phantom.collect2(container=container, datapath=["datetime_modify_7:custom_function_result.data.datetime_string","datetime_modify_7:custom_function_result.data.epoch_time","datetime_modify_7:custom_function_result.data.seconds_modified","datetime_modify_7:custom_function_result.success","datetime_modify_7:custom_function_result.message"])
+
+    datetime_modify_7_data_datetime_string = [item[0] for item in datetime_modify_7__result]
+    datetime_modify_7_data_epoch_time = [item[1] for item in datetime_modify_7__result]
+    datetime_modify_7_data_seconds_modified = [item[2] for item in datetime_modify_7__result]
+    datetime_modify_7_success = [item[3] for item in datetime_modify_7__result]
+    datetime_modify_7_message = [item[4] for item in datetime_modify_7__result]
+
+    parameters = []
+
+    parameters.append({
+        "input_1": datetime_modify_7_data_datetime_string,
+        "input_2": datetime_modify_7_data_epoch_time,
+        "input_3": datetime_modify_7_data_seconds_modified,
+        "input_4": datetime_modify_7_success,
+        "input_5": datetime_modify_7_message,
+        "input_6": None,
+        "input_7": None,
+        "input_8": None,
+        "input_9": None,
+        "input_10": None,
+    })
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
+
+    phantom.custom_function(custom_function="community/debug", parameters=parameters, name="date_time")
 
     return
 
