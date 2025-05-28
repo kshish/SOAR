@@ -55,15 +55,12 @@ def post_data_1(action=None, success=None, container=None, results=None, handle=
 def format_json_body(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
     phantom.debug("format_json_body() called")
 
-    template = """{{\"url\": \"{0}\", \"threat_key\": \"{1}\", \"time\": {2}  }}\n"""
+    template = """{{\"url\": \"{0}\", \"description\": \"{1}\"  }}\n"""
 
     # parameter list for template variable replacement
     parameters = [
         "playbook_input:url",
-        "playbook_input:threat_key",
-        "playbook_input:time",
-        "playbook_input:_key",
-        "playbook_input:_user"
+        "playbook_input:description"
     ]
 
     ################################################################################
