@@ -46,7 +46,7 @@ def post_data_1(action=None, success=None, container=None, results=None, handle=
     ## Custom Code End
     ################################################################################
 
-    phantom.act("post data", parameters=parameters, name="post_data_1", assets=["splunk es app context"])
+    phantom.act("post data", parameters=parameters, name="post_data_1", assets=["splunk es"])
 
     return
 

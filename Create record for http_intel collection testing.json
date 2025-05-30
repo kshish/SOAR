@@ -35,7 +35,7 @@
                     "targetPort": "2_in"
                 }
             ],
-            "hash": "a9ec18c09a48de992c121ed825405f5242815641",
+            "hash": "b160c0739a3d42936162985d6403b9fc0967a80d",
             "nodes": {
                 "0": {
                     "data": {
@@ -78,7 +78,7 @@
                         },
                         "connector": "HTTP",
                         "connectorConfigs": [
-                            "splunk es app context"
+                            "splunk es"
                         ],
                         "connectorId": "290b7499-0374-4930-9cdc-5e9b05d65827",
                         "connectorVersion": "v1",
@@ -210,7 +210,7 @@
         "schema": "5.0.19",
         "version": "6.4.1.353"
     },
-    "create_time": "2025-05-30T14:02:21.344515+00:00",
+    "create_time": "2025-05-30T14:06:05.188056+00:00",
     "draft_mode": false,
     "labels": [
         "*"
