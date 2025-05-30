@@ -35,7 +35,7 @@
                     "targetPort": "2_in"
                 }
             ],
-            "hash": "801100716c4c9323c00df9b28ddb2e857580544b",
+            "hash": "346740bb2dc0f271a62f816c0f79633017aed3b0",
             "nodes": {
                 "0": {
                     "data": {
@@ -51,7 +51,7 @@
                     "type": "start",
                     "warnings": {},
                     "x": 1000,
-                    "y": 419.9999999999994
+                    "y": 419.99999999999926
                 },
                 "1": {
                     "data": {
@@ -152,7 +152,7 @@
                         "functionName": "format_collection_update_endpoint",
                         "id": "4",
                         "parameters": [],
-                        "template": "storage/collections/data/local_http_intel\n",
+                        "template": "storage/collections/data/http_intel\n",
                         "type": "format"
                     },
                     "errors": {},
@@ -222,7 +222,7 @@
         "schema": "5.0.19",
         "version": "6.4.1.353"
     },
-    "create_time": "2025-05-27T23:12:22.178707+00:00",
+    "create_time": "2025-05-30T14:54:11.004348+00:00",
     "draft_mode": false,
     "labels": [
         "*"
