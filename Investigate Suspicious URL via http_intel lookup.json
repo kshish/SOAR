@@ -144,6 +144,7 @@
                     "targetPort": "13_in"
                 }
             ],
+            "hash": "28b56029ccd229a90ec77ef9fbc2c42c78ac7719",
             "nodes": {
                 "0": {
                     "data": {
@@ -159,7 +160,7 @@
                     "type": "start",
                     "warnings": {},
                     "x": 1000,
-                    "y": 419.9999999999998
+                    "y": 419.99999999999966
                 },
                 "1": {
                     "data": {
@@ -174,8 +175,8 @@
                     "id": "1",
                     "type": "end",
                     "warnings": {},
-                    "x": 1040,
-                    "y": 2280
+                    "x": 800,
+                    "y": 2340
                 },
                 "10": {
                     "data": {
@@ -236,8 +237,8 @@
                     "id": "10",
                     "type": "utility",
                     "warnings": {},
-                    "x": 1220,
-                    "y": 1204.5
+                    "x": 1380,
+                    "y": 1340
                 },
                 "11": {
                     "data": {
@@ -371,8 +372,8 @@
                     "id": "13",
                     "type": "playbook",
                     "warnings": {},
-                    "x": 1020,
-                    "y": 2080
+                    "x": 780,
+                    "y": 2140
                 },
                 "14": {
                     "data": {
@@ -392,8 +393,8 @@
                     "id": "14",
                     "type": "format",
                     "warnings": {},
-                    "x": 1020,
-                    "y": 1480
+                    "x": 780,
+                    "y": 1540
                 },
                 "15": {
                     "data": {
@@ -413,8 +414,8 @@
                     "id": "15",
                     "type": "format",
                     "warnings": {},
-                    "x": 1020,
-                    "y": 1620
+                    "x": 780,
+                    "y": 1680
                 },
                 "16": {
                     "data": {
@@ -597,8 +598,8 @@
                     "id": "16",
                     "type": "utility",
                     "warnings": {},
-                    "x": 1340,
-                    "y": 1480
+                    "x": 960,
+                    "y": 1380
                 },
                 "17": {
                     "data": {
@@ -702,8 +703,8 @@
                     "id": "17",
                     "type": "utility",
                     "warnings": {},
-                    "x": 1020,
-                    "y": 1740
+                    "x": 780,
+                    "y": 1800
                 },
                 "18": {
                     "data": {
@@ -890,8 +891,8 @@
                     "id": "18",
                     "type": "utility",
                     "warnings": {},
-                    "x": 1320,
-                    "y": 1864.5
+                    "x": 980,
+                    "y": 1900
                 },
                 "19": {
                     "data": {
@@ -913,8 +914,8 @@
                     "id": "19",
                     "type": "format",
                     "warnings": {},
-                    "x": 1020,
-                    "y": 1920
+                    "x": 780,
+                    "y": 1980
                 },
                 "2": {
                     "data": {
@@ -942,7 +943,7 @@
                             "pauseValue": 2
                         },
                         "playbookName": "Lookup url in ES http_intel collection",
-                        "playbookRepo": 3,
+                        "playbookRepo": 4,
                         "playbookRepoName": "conf25",
                         "playbookType": "data",
                         "synchronous": true,
@@ -1196,17 +1197,18 @@
                         "id": "6",
                         "parameters": [
                             "playbook_lookup_url_in_es_http_intel_collection_1:playbook_input:url",
-                            "playbook_lookup_url_in_es_http_intel_collection_1:playbook_output:threat_key"
+                            "playbook_lookup_url_in_es_http_intel_collection_1:playbook_output:threat_key",
+                            "playbook_lookup_url_in_es_http_intel_collection_1:playbook_output:date_created"
                         ],
-                        "template": "WARNING! URL Found in http_intel threat list!!!\n\nURL: {0}\nThreat Key: {1}\n",
+                        "template": "WARNING! URL Found in http_intel threat list!!!\n\nURL: {0}\nThreat Key: {1}\nTime Created: {2}",
                         "type": "format"
                     },
                     "errors": {},
                     "id": "6",
                     "type": "format",
                     "warnings": {},
-                    "x": 1220,
-                    "y": 940
+                    "x": 1380,
+                    "y": 1075.5
                 },
                 "7": {
                     "data": {
@@ -1276,8 +1278,8 @@
                     "id": "7",
                     "type": "utility",
                     "warnings": {},
-                    "x": 1220,
-                    "y": 1080
+                    "x": 1380,
+                    "y": 1215.5
                 },
                 "8": {
                     "data": {
@@ -1384,7 +1386,7 @@
         "schema": "5.0.20",
         "version": "6.4.1.361"
     },
-    "create_time": "2025-07-07T05:54:25.641115+00:00",
+    "create_time": "2025-07-07T06:35:16.799187+00:00",
     "draft_mode": false,
     "labels": [
         "*"

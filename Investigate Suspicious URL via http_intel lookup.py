@@ -126,12 +126,13 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
 def format_warning_msg(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
     phantom.debug("format_warning_msg() called")
 
-    template = """WARNING! URL Found in http_intel threat list!!!\n\nURL: {0}\nThreat Key: {1}\n"""
+    template = """WARNING! URL Found in http_intel threat list!!!\n\nURL: {0}\nThreat Key: {1}\nTime Created: {2}"""
 
     # parameter list for template variable replacement
     parameters = [
         "playbook_lookup_url_in_es_http_intel_collection_1:playbook_input:url",
-        "playbook_lookup_url_in_es_http_intel_collection_1:playbook_output:threat_key"
+        "playbook_lookup_url_in_es_http_intel_collection_1:playbook_output:threat_key",
+        "playbook_lookup_url_in_es_http_intel_collection_1:playbook_output:date_created"
     ]
 
     ################################################################################
