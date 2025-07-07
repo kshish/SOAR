@@ -49,7 +49,7 @@
                     "targetPort": "7_in"
                 }
             ],
-            "hash": "91155fe64b671f56dd6400d2d5a0fd5a46caa60d",
+            "hash": "7f751dec06bbaa2e720014246445d4db3a7de2b7",
             "nodes": {
                 "0": {
                     "data": {
@@ -84,6 +84,7 @@
                                 "action_result.data.*.parsed_response_body.time": {
                                     "contains": [],
                                     "isCustomDatapath": true,
+                                    "isDatapathArray": true,
                                     "label": "action_result.data.*.parsed_response_body.time",
                                     "value": "get_data_1:action_result.data.*.parsed_response_body.time"
                                 }
