@@ -244,14 +244,15 @@ def datetime_modify_4(action=None, success=None, container=None, results=None, h
 def on_finish(container, summary):
     phantom.debug("on_finish() called")
 
-    get_data_1_result_data = phantom.collect2(container=container, datapath=["get_data_1:action_result.data.*.parsed_response_body.*.threat_key","get_data_1:action_result.data.*.parsed_response_body.*.time"])
+    get_data_1_result_data = phantom.collect2(container=container, datapath=["get_data_1:action_result.data.*.parsed_response_body.*.threat_key"])
+    datetime_modify_4__result = phantom.collect2(container=container, datapath=["datetime_modify_4:custom_function_result.data.datetime_string"])
 
     get_data_1_result_item_0 = [item[0] for item in get_data_1_result_data]
-    get_data_1_result_item_1 = [item[1] for item in get_data_1_result_data]
+    datetime_modify_4_data_datetime_string = [item[0] for item in datetime_modify_4__result]
 
     output = {
         "threat_key": get_data_1_result_item_0,
-        "date_created": get_data_1_result_item_1,
+        "date_created": datetime_modify_4_data_datetime_string,
     }
 
     ################################################################################

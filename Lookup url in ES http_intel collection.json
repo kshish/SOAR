@@ -56,7 +56,7 @@
                     "targetPort": "1_in"
                 }
             ],
-            "hash": "f7e41b3e549d0d2b801007f83d5cb6ffe31b7126",
+            "hash": "9a79ee329959317c928fc895903930deb4799fef",
             "nodes": {
                 "0": {
                     "data": {
@@ -735,7 +735,7 @@
             {
                 "contains": [],
                 "datapaths": [
-                    "get_data_1:action_result.data.*.parsed_response_body.*.time"
+                    "datetime_modify_4:custom_function_result.data.datetime_string"
                 ],
                 "deduplicate": false,
                 "description": "Date when the collection record was created",
@@ -749,7 +749,7 @@
         "schema": "5.0.20",
         "version": "6.4.1.361"
     },
-    "create_time": "2025-07-07T06:51:24.934515+00:00",
+    "create_time": "2025-07-07T06:52:32.339257+00:00",
     "draft_mode": false,
     "labels": [
         "*"
