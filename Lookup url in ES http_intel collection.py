@@ -220,7 +220,7 @@ def datetime_modify_4(action=None, success=None, container=None, results=None, h
         parameters.append({
             "input_datetime": get_data_1_result_item[0],
             "input_format_string": "%s",
-            "modification_unit": "seconds",
+            "modification_unit": "minutes",
             "amount_to_modify": 0,
             "output_format_string": "%Ez",
         })
