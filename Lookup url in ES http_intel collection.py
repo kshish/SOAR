@@ -199,7 +199,7 @@ def call_api_3(action=None, success=None, container=None, results=None, handle=N
 def on_finish(container, summary):
     phantom.debug("on_finish() called")
 
-    get_data_1_result_data = phantom.collect2(container=container, datapath=["get_data_1:action_result.data.*.parsed_response_body.*.threat_key","get_data_1:action_result.data.*.parsed_response_body.*.time"])
+    get_data_1_result_data = phantom.collect2(container=container, datapath=["get_data_1:action_result.data.*.parsed_response_body.*.threat_key","get_data_1:action_result.data.*.parsed_response_body.time"])
 
     get_data_1_result_item_0 = [item[0] for item in get_data_1_result_data]
     get_data_1_result_item_1 = [item[1] for item in get_data_1_result_data]

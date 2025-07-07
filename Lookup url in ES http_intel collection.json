@@ -49,7 +49,7 @@
                     "targetPort": "7_in"
                 }
             ],
-            "hash": "069e830ed3c77ed68e5460c68ff316508495de2d",
+            "hash": "91155fe64b671f56dd6400d2d5a0fd5a46caa60d",
             "nodes": {
                 "0": {
                     "data": {
@@ -84,7 +84,6 @@
                                 "action_result.data.*.parsed_response_body.time": {
                                     "contains": [],
                                     "isCustomDatapath": true,
-                                    "isDatapathArray": true,
                                     "label": "action_result.data.*.parsed_response_body.time",
                                     "value": "get_data_1:action_result.data.*.parsed_response_body.time"
                                 }
@@ -615,7 +614,7 @@
             {
                 "contains": [],
                 "datapaths": [
-                    "get_data_1:action_result.data.*.parsed_response_body.*.time"
+                    "get_data_1:action_result.data.*.parsed_response_body.time"
                 ],
                 "deduplicate": false,
                 "description": "Date when the collection record was created",
@@ -629,7 +628,7 @@
         "schema": "5.0.20",
         "version": "6.4.1.361"
     },
-    "create_time": "2025-07-07T06:39:09.279319+00:00",
+    "create_time": "2025-07-07T06:41:19.740325+00:00",
     "draft_mode": false,
     "labels": [
         "*"
