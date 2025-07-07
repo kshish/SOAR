@@ -49,7 +49,7 @@
                     "targetPort": "7_in"
                 }
             ],
-            "hash": "7f751dec06bbaa2e720014246445d4db3a7de2b7",
+            "hash": "91155fe64b671f56dd6400d2d5a0fd5a46caa60d",
             "nodes": {
                 "0": {
                     "data": {
@@ -65,7 +65,7 @@
                     "type": "start",
                     "warnings": {},
                     "x": 1000,
-                    "y": 400
+                    "y": 399.9999999999999
                 },
                 "1": {
                     "data": {
@@ -80,6 +80,12 @@
                                     "isDatapathArray": true,
                                     "label": "action_result.data.*.parsed_response_body.threat_key",
                                     "value": "get_data_1:action_result.data.*.parsed_response_body.threat_key"
+                                },
+                                "action_result.data.*.parsed_response_body.time": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "label": "action_result.data.*.parsed_response_body.time",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.time"
                                 }
                             }
                         },
@@ -160,11 +166,7 @@
                     "errors": {},
                     "id": "3",
                     "type": "action",
-                    "warnings": {
-                        "config": [
-                            "Reconfigure invalid datapath."
-                        ]
-                    },
+                    "warnings": {},
                     "x": 980,
                     "y": 780
                 },
@@ -608,15 +610,25 @@
                 "description": "This is the threat key looked up from http_intel",
                 "metadata": {},
                 "name": "Threat Key"
+            },
+            {
+                "contains": [],
+                "datapaths": [
+                    "get_data_1:action_result.data.*.parsed_response_body.time"
+                ],
+                "deduplicate": false,
+                "description": "Date when the collection record was created",
+                "metadata": {},
+                "name": "Date Created"
             }
         ],
         "playbook_trigger": "artifact_created",
         "playbook_type": "data",
         "python_version": "3.9",
-        "schema": "5.0.19",
-        "version": "6.4.1.353"
+        "schema": "5.0.20",
+        "version": "6.4.1.361"
     },
-    "create_time": "2025-05-27T06:01:24.208304+00:00",
+    "create_time": "2025-07-07T06:30:25.356736+00:00",
     "draft_mode": false,
     "labels": [
         "*"
