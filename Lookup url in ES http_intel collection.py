@@ -71,7 +71,19 @@ def get_data_1(action=None, success=None, container=None, results=None, handle=N
     ## Custom Code End
     ################################################################################
 
-    phantom.act("get data", parameters=parameters, name="get_data_1", assets=["splunk es"], callback=returned_threat_key)
+    phantom.act("get data", parameters=parameters, name="get_data_1", assets=["splunk es"], callback=get_data_1_callback)
+
+    return
+
+
+@phantom.playbook_block()
+def get_data_1_callback(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("get_data_1_callback() called")
+
+    
+    returned_threat_key(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=filtered_artifacts, filtered_results=filtered_results)
+    datetime_modify_4(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=filtered_artifacts, filtered_results=filtered_results)
+
 
     return
 
@@ -191,6 +203,39 @@ def call_api_3(action=None, success=None, container=None, results=None, handle=N
     ################################################################################
     ## Custom Code End
     ################################################################################
+
+    return
+
+
+@phantom.playbook_block()
+def datetime_modify_4(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("datetime_modify_4() called")
+
+    get_data_1_result_data = phantom.collect2(container=container, datapath=["get_data_1:action_result.data.*.parsed_response_body.*.time","get_data_1:action_result.parameter.context.artifact_id"], action_results=results)
+
+    parameters = []
+
+    # build parameters list for 'datetime_modify_4' call
+    for get_data_1_result_item in get_data_1_result_data:
+        parameters.append({
+            "input_datetime": get_data_1_result_item[0],
+            "input_format_string": "%s",
+            "modification_unit": "seconds",
+            "amount_to_modify": 0,
+            "output_format_string": "%Ez",
+        })
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
+
+    phantom.custom_function(custom_function="community/datetime_modify", parameters=parameters, name="datetime_modify_4")
 
     return
 
