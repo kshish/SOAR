@@ -322,18 +322,18 @@ def playbook_create_record_for_http_intel_collection_1(action=None, success=None
     phantom.debug("playbook_create_record_for_http_intel_collection_1() called")
 
     playbook_lookup_url_in_es_http_intel_collection_1_input_url = phantom.collect2(container=container, datapath=["playbook_lookup_url_in_es_http_intel_collection_1:playbook_input:url"])
-    format_threat_key_value = phantom.get_format_data(name="format_threat_key_value")
     format_time = phantom.get_format_data(name="format_time")
     format_record_user_field = phantom.get_format_data(name="format_record_user_field")
+    format_threat_key_value = phantom.get_format_data(name="format_threat_key_value")
 
     playbook_lookup_url_in_es_http_intel_collection_1_input_url_values = [item[0] for item in playbook_lookup_url_in_es_http_intel_collection_1_input_url]
 
     inputs = {
         "url": playbook_lookup_url_in_es_http_intel_collection_1_input_url_values,
-        "threat_key": format_threat_key_value,
+        "_key": [],
         "time": format_time,
         "_user": format_record_user_field,
-        "_key": [],
+        "threat_key": format_threat_key_value,
     }
 
     ################################################################################
@@ -452,9 +452,9 @@ def datetime_modify_7(action=None, success=None, container=None, results=None, h
 
     parameters.append({
         "input_datetime": None,
-        "input_format_string": None,
-        "modification_unit": None,
         "amount_to_modify": None,
+        "modification_unit": None,
+        "input_format_string": None,
         "output_format_string": None,
     })
 

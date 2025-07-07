@@ -144,6 +144,7 @@
                     "targetPort": "13_in"
                 }
             ],
+            "hash": "e5e430efef42717cf98424bb8f9ea51466e76eac",
             "nodes": {
                 "0": {
                     "data": {
@@ -159,7 +160,7 @@
                     "type": "start",
                     "warnings": {},
                     "x": 1000,
-                    "y": 419.9999999999999
+                    "y": 419.9999999999998
                 },
                 "1": {
                     "data": {
@@ -1381,10 +1382,10 @@
         "playbook_trigger": "artifact_created",
         "playbook_type": "automation",
         "python_version": "3.9",
-        "schema": "5.0.19",
-        "version": "6.4.1.353"
+        "schema": "5.0.20",
+        "version": "6.4.1.361"
     },
-    "create_time": "2025-05-27T05:51:51.569075+00:00",
+    "create_time": "2025-07-07T05:54:25.641115+00:00",
     "draft_mode": false,
     "labels": [
         "*"
