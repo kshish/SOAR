@@ -34,7 +34,7 @@
                     "targetPort": "5_in"
                 }
             ],
-            "hash": "9b5c2253d6727911dbabce77bf3b454cfb2a4945",
+            "hash": "a4e576d05b853b1fcf49a5ceec8e7ffde0c2659f",
             "nodes": {
                 "0": {
                     "data": {
@@ -50,7 +50,7 @@
                     "type": "start",
                     "warnings": {},
                     "x": 1000,
-                    "y": 419.9999999999999
+                    "y": 419.9999999999998
                 },
                 "1": {
                     "data": {
@@ -171,8 +171,8 @@
                             "description": "URL found in HTTP threat intel",
                             "disposition": "",
                             "id": "finding:finding_id",
-                            "status": "In Progress",
-                            "urgency": "Critical"
+                            "status": "",
+                            "urgency": ""
                         },
                         "requiredParameters": [
                             {
@@ -200,7 +200,7 @@
         "schema": "5.0.20",
         "version": "6.4.1.361"
     },
-    "create_time": "2025-07-11T00:59:59.373811+00:00",
+    "create_time": "2025-07-11T01:25:33.062095+00:00",
     "draft_mode": false,
     "labels": [
         "es_soar_integration"
