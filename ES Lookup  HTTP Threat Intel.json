@@ -47,7 +47,7 @@
                     "targetPort": "6_in"
                 }
             ],
-            "hash": "04c72d19df883ac2a8ab570c27e62b973de8dc30",
+            "hash": "8817256d59123b2258da06ede99591022e354ecb",
             "nodes": {
                 "0": {
                     "data": {
@@ -200,7 +200,7 @@
                             "description": "",
                             "disposition": "",
                             "id": "finding:finding_id",
-                            "status": "",
+                            "status": "Open",
                             "urgency": "Critical"
                         },
                         "requiredParameters": [
@@ -274,7 +274,7 @@
         "schema": "5.0.20",
         "version": "6.4.1.361"
     },
-    "create_time": "2025-07-11T01:48:47.562695+00:00",
+    "create_time": "2025-07-11T01:50:36.151240+00:00",
     "draft_mode": false,
     "labels": [
         "es_soar_integration"
