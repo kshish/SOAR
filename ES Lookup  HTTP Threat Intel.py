@@ -85,8 +85,8 @@ def update_finding_or_investigation_2(action=None, success=None, container=None,
             parameters.append({
                 "id": finding_data_item[0],
                 "status": "",
-                "urgency": "",
-                "description": "URL found in HTTP threat intel",
+                "urgency": "Critical",
+                "description": "",
                 "disposition": "",
             })
 

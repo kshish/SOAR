@@ -34,7 +34,7 @@
                     "targetPort": "5_in"
                 }
             ],
-            "hash": "a4e576d05b853b1fcf49a5ceec8e7ffde0c2659f",
+            "hash": "31873cf7d49196d20b78089c9f01d1a50a434514",
             "nodes": {
                 "0": {
                     "data": {
@@ -50,7 +50,7 @@
                     "type": "start",
                     "warnings": {},
                     "x": 1000,
-                    "y": 419.9999999999998
+                    "y": 419.99999999999966
                 },
                 "1": {
                     "data": {
@@ -104,8 +104,8 @@
                     "id": "3",
                     "type": "playbook",
                     "warnings": {},
-                    "x": 990,
-                    "y": 564.5
+                    "x": 980,
+                    "y": 560
                 },
                 "4": {
                     "data": {
@@ -168,11 +168,11 @@
                             "pauseValue": 2
                         },
                         "parameters": {
-                            "description": "URL found in HTTP threat intel",
+                            "description": "",
                             "disposition": "",
                             "id": "finding:finding_id",
                             "status": "",
-                            "urgency": ""
+                            "urgency": "Critical"
                         },
                         "requiredParameters": [
                             {
@@ -187,7 +187,7 @@
                     "type": "enterpriseSecurity",
                     "warnings": {},
                     "x": 980,
-                    "y": 964.5
+                    "y": 960
                 }
             },
             "notes": ""
@@ -200,7 +200,7 @@
         "schema": "5.0.20",
         "version": "6.4.1.361"
     },
-    "create_time": "2025-07-11T01:25:33.062095+00:00",
+    "create_time": "2025-07-11T01:30:46.784298+00:00",
     "draft_mode": false,
     "labels": [
         "es_soar_integration"
