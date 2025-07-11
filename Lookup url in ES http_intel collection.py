@@ -219,7 +219,7 @@ def datetime_modify_4(action=None, success=None, container=None, results=None, h
     for get_data_1_result_item in get_data_1_result_data:
         parameters.append({
             "input_datetime": get_data_1_result_item[0],
-            "amount_to_modify": 0,
+            "amount_to_modify": None,
             "modification_unit": "minutes",
             "input_format_string": "%s",
             "output_format_string": None,
