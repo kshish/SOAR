@@ -118,6 +118,7 @@ def update_finding_or_investigation_1(action=None, success=None, container=None,
 
     parameters.append({
         "status": "Closed",
+        "urgency": "Informational",
         "id": "",
     })
 
