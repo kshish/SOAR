@@ -114,13 +114,18 @@ def update_finding_or_investigation_1(action=None, success=None, container=None,
 
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
+    finding_data = phantom.collect2(container=container, datapath=["finding:finding_id"])
+
     parameters = []
 
-    parameters.append({
-        "status": "Closed",
-        "urgency": "Informational",
-        "id": "",
-    })
+    # build parameters list for 'update_finding_or_investigation_1' call
+    for finding_data_item in finding_data:
+        if finding_data_item[0] is not None:
+            parameters.append({
+                "status": "Closed",
+                "urgency": "Informational",
+                "id": finding_data_item[0],
+            })
 
     ################################################################################
     ## Custom Code Start
