@@ -47,7 +47,7 @@
                     "targetPort": "6_in"
                 }
             ],
-            "hash": "8cd836d76d4dd6b02d91b4fd0912b0c18efcea27",
+            "hash": "d3492f761f781b00f96ffc4ae4734d9f20d6f235",
             "nodes": {
                 "0": {
                     "data": {
@@ -264,7 +264,13 @@
                     "y": 960
                 }
             },
-            "notes": ""
+            "notes": "",
+            "origin": {
+                "playbook_id": 207,
+                "playbook_name": "ES Lookup  HTTP Threat Intel",
+                "playbook_repo_id": 4,
+                "playbook_repo_name": "conf25"
+            }
         },
         "input_spec": null,
         "output_spec": null,
@@ -274,7 +280,7 @@
         "schema": "5.0.20",
         "version": "6.4.1.361"
     },
-    "create_time": "2025-07-11T01:51:59.644040+00:00",
+    "create_time": "2025-07-11T03:01:43.365743+00:00",
     "draft_mode": false,
     "labels": [
         "es_soar_integration"

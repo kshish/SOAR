@@ -122,9 +122,9 @@ def update_finding_or_investigation_1(action=None, success=None, container=None,
     for finding_data_item in finding_data:
         if finding_data_item[0] is not None:
             parameters.append({
+                "id": finding_data_item[0],
                 "status": "Closed",
                 "urgency": "Informational",
-                "id": finding_data_item[0],
             })
 
     ################################################################################
