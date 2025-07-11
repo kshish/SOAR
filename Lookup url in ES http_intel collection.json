@@ -56,7 +56,7 @@
                     "targetPort": "1_in"
                 }
             ],
-            "hash": "9a79ee329959317c928fc895903930deb4799fef",
+            "hash": "8117c522b465e360262e6e87c69387014dff93df",
             "nodes": {
                 "0": {
                     "data": {
@@ -72,7 +72,7 @@
                     "type": "start",
                     "warnings": {},
                     "x": 1000,
-                    "y": 399.9999999999999
+                    "y": 399.9999999999998
                 },
                 "1": {
                     "data": {
@@ -698,7 +698,7 @@
                                 "input_datetime": "get_data_1:action_result.data.*.parsed_response_body.*.time",
                                 "input_format_string": "%s",
                                 "modification_unit": "minutes",
-                                "output_format_string": "%Ez"
+                                "output_format_string": ""
                             }
                         }
                     },
@@ -717,7 +717,7 @@
                 "contains": [
                     "url"
                 ],
-                "description": "Provide the URL to lookup",
+                "description": "Provide the UR to lookup",
                 "name": "url"
             }
         ],
@@ -749,7 +749,7 @@
         "schema": "5.0.20",
         "version": "6.4.1.361"
     },
-    "create_time": "2025-07-07T06:52:32.339257+00:00",
+    "create_time": "2025-07-11T04:30:14.695355+00:00",
     "draft_mode": false,
     "labels": [
         "*"
