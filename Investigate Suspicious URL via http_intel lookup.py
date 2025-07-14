@@ -61,14 +61,14 @@ def playbook_lookup_url_in_es_http_intel_collection_for_recording_1_callback(act
 def debug_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
     phantom.debug("debug_1() called")
 
-    playbook_lookup_url_in_es_http_intel_collection_1_output_threat_key = phantom.collect2(container=container, datapath=["playbook_lookup_url_in_es_http_intel_collection_1:playbook_output:threat_key"])
+    playbook_lookup_url_in_es_http_intel_collection_for_recording_1_output_threat_key = phantom.collect2(container=container, datapath=["playbook_lookup_url_in_es_http_intel_collection_for_recording_1:playbook_output:threat_key"])
 
-    playbook_lookup_url_in_es_http_intel_collection_1_output_threat_key_values = [item[0] for item in playbook_lookup_url_in_es_http_intel_collection_1_output_threat_key]
+    playbook_lookup_url_in_es_http_intel_collection_for_recording_1_output_threat_key_values = [item[0] for item in playbook_lookup_url_in_es_http_intel_collection_for_recording_1_output_threat_key]
 
     parameters = []
 
     parameters.append({
-        "input_1": playbook_lookup_url_in_es_http_intel_collection_1_output_threat_key_values,
+        "input_1": playbook_lookup_url_in_es_http_intel_collection_for_recording_1_output_threat_key_values,
         "input_2": None,
         "input_3": None,
         "input_4": None,

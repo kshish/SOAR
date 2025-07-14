@@ -144,7 +144,7 @@
                     "targetPort": "13_in"
                 }
             ],
-            "hash": "d286746032c6d51a0defb380f7e47ef18f1fb78c",
+            "hash": "957916f138e180e31b4c892137d18c02d1a3baa3",
             "nodes": {
                 "0": {
                     "data": {
@@ -1103,7 +1103,7 @@
                         "values": {
                             "debug": {
                                 "input_1": [
-                                    "playbook_lookup_url_in_es_http_intel_collection_1:playbook_output:threat_key"
+                                    "playbook_lookup_url_in_es_http_intel_collection_for_recording_1:playbook_output:threat_key"
                                 ],
                                 "input_10": null,
                                 "input_2": null,
@@ -1120,11 +1120,7 @@
                     "errors": {},
                     "id": "3",
                     "type": "utility",
-                    "warnings": {
-                        "config": [
-                            "Reconfigure invalid datapath."
-                        ]
-                    },
+                    "warnings": {},
                     "x": 1300,
                     "y": 780
                 },
@@ -1380,7 +1376,7 @@
         "schema": "5.0.20",
         "version": "6.4.1.361"
     },
-    "create_time": "2025-07-14T23:19:21.839814+00:00",
+    "create_time": "2025-07-14T23:20:57.019365+00:00",
     "draft_mode": false,
     "labels": [
         "*"
