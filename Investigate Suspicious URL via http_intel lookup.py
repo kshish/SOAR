@@ -366,7 +366,7 @@ def playbook_create_record_for_http_intel_collection_1_callback(action=None, suc
 def format_threat_key_value(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
     phantom.debug("format_threat_key_value() called")
 
-    template = """local intel added"""
+    template = """local intel"""
 
     # parameter list for template variable replacement
     parameters = []
