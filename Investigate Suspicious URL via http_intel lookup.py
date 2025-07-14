@@ -12,14 +12,14 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
 
-    # call 'playbook_lookup_url_in_es_http_intel_collection_1' block
-    playbook_lookup_url_in_es_http_intel_collection_1(container=container)
+    # call 'playbook_lookup_url_in_es_http_intel_collection_for_recording_1' block
+    playbook_lookup_url_in_es_http_intel_collection_for_recording_1(container=container)
 
     return
 
 @phantom.playbook_block()
-def playbook_lookup_url_in_es_http_intel_collection_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
-    phantom.debug("playbook_lookup_url_in_es_http_intel_collection_1() called")
+def playbook_lookup_url_in_es_http_intel_collection_for_recording_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("playbook_lookup_url_in_es_http_intel_collection_for_recording_1() called")
 
     container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.cef.requestURL"])
 
@@ -39,15 +39,15 @@ def playbook_lookup_url_in_es_http_intel_collection_1(action=None, success=None,
     ## Custom Code End
     ################################################################################
 
-    # call playbook "conf25/Lookup url in ES http_intel collection", returns the playbook_run_id
-    playbook_run_id = phantom.playbook("conf25/Lookup url in ES http_intel collection", container=container, name="playbook_lookup_url_in_es_http_intel_collection_1", callback=playbook_lookup_url_in_es_http_intel_collection_1_callback, inputs=inputs)
+    # call playbook "local/Lookup url in ES http_intel collection for recording", returns the playbook_run_id
+    playbook_run_id = phantom.playbook("local/Lookup url in ES http_intel collection for recording", container=container, name="playbook_lookup_url_in_es_http_intel_collection_for_recording_1", callback=playbook_lookup_url_in_es_http_intel_collection_for_recording_1_callback, inputs=inputs)
 
     return
 
 
 @phantom.playbook_block()
-def playbook_lookup_url_in_es_http_intel_collection_1_callback(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
-    phantom.debug("playbook_lookup_url_in_es_http_intel_collection_1_callback() called")
+def playbook_lookup_url_in_es_http_intel_collection_for_recording_1_callback(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("playbook_lookup_url_in_es_http_intel_collection_for_recording_1_callback() called")
 
     
     debug_1(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=filtered_artifacts, filtered_results=filtered_results)
@@ -322,19 +322,16 @@ def decision_2(action=None, success=None, container=None, results=None, handle=N
 def playbook_create_record_for_http_intel_collection_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
     phantom.debug("playbook_create_record_for_http_intel_collection_1() called")
 
-    playbook_lookup_url_in_es_http_intel_collection_1_input_url = phantom.collect2(container=container, datapath=["playbook_lookup_url_in_es_http_intel_collection_1:playbook_input:url"])
-    format_time = phantom.get_format_data(name="format_time")
-    format_record_user_field = phantom.get_format_data(name="format_record_user_field")
+    container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.cef.requestURL"])
     format_threat_key_value = phantom.get_format_data(name="format_threat_key_value")
+    format_time = phantom.get_format_data(name="format_time")
 
-    playbook_lookup_url_in_es_http_intel_collection_1_input_url_values = [item[0] for item in playbook_lookup_url_in_es_http_intel_collection_1_input_url]
+    container_artifact_cef_item_0 = [item[0] for item in container_artifact_data]
 
     inputs = {
-        "url": playbook_lookup_url_in_es_http_intel_collection_1_input_url_values,
-        "_key": [],
-        "time": format_time,
-        "_user": format_record_user_field,
+        "url": container_artifact_cef_item_0,
         "threat_key": format_threat_key_value,
+        "time": format_time,
     }
 
     ################################################################################
@@ -347,8 +344,20 @@ def playbook_create_record_for_http_intel_collection_1(action=None, success=None
     ## Custom Code End
     ################################################################################
 
-    # call playbook "conf25/Create record for http_intel collection", returns the playbook_run_id
-    playbook_run_id = phantom.playbook("conf25/Create record for http_intel collection", container=container, inputs=inputs)
+    # call playbook "preconf/Create record for http_intel collection", returns the playbook_run_id
+    playbook_run_id = phantom.playbook("preconf/Create record for http_intel collection", container=container, name="playbook_create_record_for_http_intel_collection_1", callback=playbook_create_record_for_http_intel_collection_1_callback, inputs=inputs)
+
+    return
+
+
+@phantom.playbook_block()
+def playbook_create_record_for_http_intel_collection_1_callback(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("playbook_create_record_for_http_intel_collection_1_callback() called")
+
+    
+    # Downstream End block cannot be called directly, since execution will call on_finish automatically.
+    # Using placeholder callback function so child playbook is run synchronously.
+
 
     return
 
