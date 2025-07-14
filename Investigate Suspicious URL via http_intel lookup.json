@@ -144,7 +144,7 @@
                     "targetPort": "13_in"
                 }
             ],
-            "hash": "7e434ac5f36bfc7fa0cb69877c5308c4c93cc954",
+            "hash": "d286746032c6d51a0defb380f7e47ef18f1fb78c",
             "nodes": {
                 "0": {
                     "data": {
@@ -1139,7 +1139,7 @@
                                     {
                                         "conditionIndex": 0,
                                         "op": "==",
-                                        "param": "playbook_lookup_url_in_es_http_intel_collection_1:playbook_output:threat_key",
+                                        "param": "playbook_lookup_url_in_es_http_intel_collection_for_recording_1:playbook_output:threat_key",
                                         "value": ""
                                     }
                                 ],
@@ -1175,11 +1175,7 @@
                     "errors": {},
                     "id": "4",
                     "type": "decision",
-                    "warnings": {
-                        "config": [
-                            "Reconfigure invalid datapath."
-                        ]
-                    },
+                    "warnings": {},
                     "x": 1060,
                     "y": 800
                 },
@@ -1194,9 +1190,9 @@
                         "functionName": "format_warning_msg",
                         "id": "6",
                         "parameters": [
-                            "playbook_lookup_url_in_es_http_intel_collection_1:playbook_input:url",
-                            "playbook_lookup_url_in_es_http_intel_collection_1:playbook_output:threat_key",
-                            "playbook_lookup_url_in_es_http_intel_collection_1:playbook_output:date_created"
+                            "playbook_lookup_url_in_es_http_intel_collection_for_recording_1:playbook_input:url",
+                            "playbook_lookup_url_in_es_http_intel_collection_for_recording_1:playbook_output:threat_key",
+                            "playbook_lookup_url_in_es_http_intel_collection_for_recording_1:playbook_output:date_created"
                         ],
                         "template": "WARNING! URL Found in http_intel threat list!!!\n\nURL: {0}\nThreat Key: {1}\nTime Created: {2}",
                         "type": "format"
@@ -1204,11 +1200,7 @@
                     "errors": {},
                     "id": "6",
                     "type": "format",
-                    "warnings": {
-                        "config": [
-                            "Reconfigure invalid datapath."
-                        ]
-                    },
+                    "warnings": {},
                     "x": 1380,
                     "y": 1075.5
                 },
@@ -1294,7 +1286,7 @@
                         "functionName": "format_url_not_found_msg",
                         "id": "8",
                         "parameters": [
-                            "playbook_lookup_url_in_es_http_intel_collection_1:playbook_input:url"
+                            "playbook_lookup_url_in_es_http_intel_collection_for_recording_1:playbook_input:url"
                         ],
                         "template": "URL not found in http_intel threat list.\n\nURL: {0}",
                         "type": "format"
@@ -1302,11 +1294,7 @@
                     "errors": {},
                     "id": "8",
                     "type": "format",
-                    "warnings": {
-                        "config": [
-                            "Reconfigure invalid datapath."
-                        ]
-                    },
+                    "warnings": {},
                     "x": 780,
                     "y": 940
                 },
@@ -1392,7 +1380,7 @@
         "schema": "5.0.20",
         "version": "6.4.1.361"
     },
-    "create_time": "2025-07-14T22:51:40.927389+00:00",
+    "create_time": "2025-07-14T23:19:21.839814+00:00",
     "draft_mode": false,
     "labels": [
         "*"

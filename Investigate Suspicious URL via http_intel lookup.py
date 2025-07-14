@@ -103,10 +103,10 @@ def decision_1(action=None, success=None, container=None, results=None, handle=N
     found_match_1 = phantom.decision(
         container=container,
         conditions=[
-            ["playbook_lookup_url_in_es_http_intel_collection_1:playbook_output:threat_key", "==", ""]
+            ["playbook_lookup_url_in_es_http_intel_collection_for_recording_1:playbook_output:threat_key", "==", ""]
         ],
         conditions_dps=[
-            ["playbook_lookup_url_in_es_http_intel_collection_1:playbook_output:threat_key", "==", ""]
+            ["playbook_lookup_url_in_es_http_intel_collection_for_recording_1:playbook_output:threat_key", "==", ""]
         ],
         name="decision_1:condition_1",
         delimiter=None)
@@ -130,9 +130,9 @@ def format_warning_msg(action=None, success=None, container=None, results=None, 
 
     # parameter list for template variable replacement
     parameters = [
-        "playbook_lookup_url_in_es_http_intel_collection_1:playbook_input:url",
-        "playbook_lookup_url_in_es_http_intel_collection_1:playbook_output:threat_key",
-        "playbook_lookup_url_in_es_http_intel_collection_1:playbook_output:date_created"
+        "playbook_lookup_url_in_es_http_intel_collection_for_recording_1:playbook_input:url",
+        "playbook_lookup_url_in_es_http_intel_collection_for_recording_1:playbook_output:threat_key",
+        "playbook_lookup_url_in_es_http_intel_collection_for_recording_1:playbook_output:date_created"
     ]
 
     ################################################################################
@@ -183,7 +183,7 @@ def format_url_not_found_msg(action=None, success=None, container=None, results=
 
     # parameter list for template variable replacement
     parameters = [
-        "playbook_lookup_url_in_es_http_intel_collection_1:playbook_input:url"
+        "playbook_lookup_url_in_es_http_intel_collection_for_recording_1:playbook_input:url"
     ]
 
     ################################################################################
